@@ -1,0 +1,10 @@
+*.*
+!*.js
+!*.json
+!*.css
+
+**/node_modules
+package.json
+
+# Project specific
+/packages/web/public

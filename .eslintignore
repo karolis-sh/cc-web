@@ -1,0 +1,5 @@
+**/node_modules
+
+# Project specific
+/packages/web/.cache/
+/packages/web/public
