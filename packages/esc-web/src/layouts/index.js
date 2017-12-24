@@ -1,9 +1,9 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Link from 'gatsby-link'
-import Helmet from 'react-helmet'
+import React from 'react';
+import PropTypes from 'prop-types';
+import Link from 'gatsby-link';
+import Helmet from 'react-helmet';
 
-import './index.css'
+import './index.css';
 
 const Header = () => (
   <div
@@ -21,7 +21,7 @@ const Header = () => (
     >
       <h1 style={{ margin: 0 }}>
         <Link
-          to="/"
+          to='/'
           style={{
             color: 'white',
             textDecoration: 'none',
@@ -32,16 +32,13 @@ const Header = () => (
       </h1>
     </div>
   </div>
-)
+);
 
 const TemplateWrapper = ({ children }) => (
   <div>
     <Helmet
-      title="Gatsby Default Starter"
-      meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' },
-      ]}
+      title='Gatsby Default Starter'
+      meta={[{ name: 'description', content: 'Sample' }, { name: 'keywords', content: 'sample, something' }]}
     />
     <Header />
     <div
@@ -55,10 +52,14 @@ const TemplateWrapper = ({ children }) => (
       {children()}
     </div>
   </div>
-)
+);
 
 TemplateWrapper.propTypes = {
   children: PropTypes.func,
-}
+};
 
-export default TemplateWrapper
+TemplateWrapper.defaultProps = {
+  children: undefined,
+};
+
+export default TemplateWrapper;
