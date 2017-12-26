@@ -1,12 +1,11 @@
 import React from 'react';
-import Link from 'gatsby-link';
 
-const SecondPage = () => (
-  <div>
-    <h1>Projects</h1>
-    <Link to="/contacts">Go to Contacts</Link>
-    <Link to="/">Go to Home</Link>
-  </div>
-);
+function ProjectsPage() {
+  return (
+    <div>
+      <h1>Projects</h1>
+    </div>
+  );
+}
 
-export default SecondPage;
+export default ProjectsPage;

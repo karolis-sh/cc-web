@@ -1,11 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import styled from 'styled-components';
 
-import './index.css';
+import { Header, Footer } from '../components';
+import '../style';
 
-const TemplateWrapper = ({ children }) => (
-  <div>
+const Container = styled.div`
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+`;
+
+const Content = styled.div`
+  flex: 1;
+`;
+
+const Wrapper = ({ children }) => (
+  <Container>
     <Helmet
       title="ESC"
       meta={[
@@ -13,25 +25,18 @@ const TemplateWrapper = ({ children }) => (
         { name: 'keywords', content: 'ESC' },
       ]}
     />
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '0px 1.0875rem 1.45rem',
-        paddingTop: 0,
-      }}
-    >
-      {children()}
-    </div>
-  </div>
+    <Header />
+    <Content>{children()}</Content>
+    <Footer />
+  </Container>
 );
 
-TemplateWrapper.propTypes = {
+Wrapper.propTypes = {
   children: PropTypes.func,
 };
 
-TemplateWrapper.defaultProps = {
+Wrapper.defaultProps = {
   children: undefined,
 };
 
-export default TemplateWrapper;
+export default Wrapper;
