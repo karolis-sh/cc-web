@@ -2,7 +2,7 @@
   "extends": "airbnb",
   "plugins": ["react", "prettier"],
   "settings": {
-    "import/core-modules": ["react", "prop-types", "react-helmet"]
+    "import/core-modules": ["react", "prop-types", "react-helmet", "graphql"]
   },
   "rules": {
     "prettier/prettier": "error",

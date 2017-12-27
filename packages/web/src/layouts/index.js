@@ -16,20 +16,22 @@ const Content = styled.div`
   flex: 1;
 `;
 
-const Wrapper = ({ children }) => (
-  <Container>
-    <Helmet
-      title="ESC"
-      meta={[
-        { name: 'description', content: 'ESC' },
-        { name: 'keywords', content: 'ESC' },
-      ]}
-    />
-    <Header />
-    <Content>{children()}</Content>
-    <Footer />
-  </Container>
-);
+function Wrapper({ children }) {
+  return (
+    <Container>
+      <Helmet
+        title="ESC"
+        meta={[
+          { name: 'description', content: 'ESC' },
+          { name: 'keywords', content: 'ESC' },
+        ]}
+      />
+      <Header />
+      <Content>{children()}</Content>
+      <Footer />
+    </Container>
+  );
+}
 
 Wrapper.propTypes = {
   children: PropTypes.func,
