@@ -29,7 +29,9 @@ function Wrapper({ children }) {
           ]}
         />
         <Header />
-        <Content>{children()}</Content>
+        <Content>
+          <div className="container ph2">{children()}</div>
+        </Content>
         <Footer />
       </Container>
     </TranslateProvider>

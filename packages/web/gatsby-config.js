@@ -19,5 +19,11 @@ module.exports = {
         accessToken: keys.contentful.accessToken,
       },
     },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`asap`],
+      },
+    },
   ],
 };

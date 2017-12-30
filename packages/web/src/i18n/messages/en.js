@@ -1,5 +1,12 @@
 export default {
-  app: {
-    hello: 'Hello there!',
+  header: {
+    nav: {
+      home: 'HOME',
+      projects: 'PROJECTS',
+      contacts: 'CONTACT US',
+    },
+  },
+  projects: {
+    title: 'Projects',
   },
 };

@@ -1,25 +1,39 @@
 import React from 'react';
 import Link from 'gatsby-link';
+import { FormattedMessage } from 'react-intl';
+import styled from 'styled-components';
 
-import { LocaleSwitcher } from '../i18n/components';
+import { media } from '../style';
+import LanguageSwitcher from './LanguageSwitcher';
+
+const HeaderWrapper = styled.header`
+  display: flex;
+
+  > *:first-child {
+    flex: 1;
+  }
+
+  ${media.notSmall`
+    flex-direction: column-reverse;
+  `};
+`;
 
 function Header() {
   return (
-    <header className="pa3">
-      <Link to="/">Home</Link> <Link to="/projects">Projects</Link>{' '}
-      <Link to="/contacts">Contacts</Link>
-      <LocaleSwitcher
-        render={({ locale, setLocale }) => (
-          <div className="ml3" style={{ display: 'inline-block' }}>
-            <div>Locale - {locale}</div>
-            <div>
-              <button onClick={() => setLocale('en')}>EN</button>
-              <button onClick={() => setLocale('sv')}>SV</button>
-            </div>
-          </div>
-        )}
-      />
-    </header>
+    <HeaderWrapper>
+      <div className="container">
+        <Link to="/">
+          <FormattedMessage id="header.nav.home" />
+        </Link>{' '}
+        <Link to="/projects">
+          <FormattedMessage id="header.nav.projects" />
+        </Link>{' '}
+        <Link to="/contacts">
+          <FormattedMessage id="header.nav.contacts" />
+        </Link>
+      </div>
+      <LanguageSwitcher />
+    </HeaderWrapper>
   );
 }
 

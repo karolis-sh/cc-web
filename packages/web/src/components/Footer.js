@@ -7,7 +7,11 @@ const Container = styled.footer`
 `;
 
 function Footer() {
-  return <Container className="pa3">Footer</Container>;
+  return (
+    <Container className="pa3">
+      <div className="container">Footer</div>
+    </Container>
+  );
 }
 
 export default Footer;
