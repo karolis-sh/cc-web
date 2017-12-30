@@ -1,27 +1,41 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import graphql from 'graphql';
+import { FormattedMessage } from 'react-intl';
+
+import { CurrentLocale } from '../i18n/components';
 
 function ProjectsPage({ data }) {
-  const projects = data.en.items.map(item => item.project);
   return (
     <div>
       <h1>Projects</h1>
-      {projects.map(item => (
-        <div key={item.id}>
-          <h2>{item.name}</h2>
-          <div>
-            {item.images.map(image => (
-              <img
-                key={image.id}
-                src={image.thumbnail.src}
-                alt={image.title}
-                style={{ padding: 10 }}
-              />
-            ))}
-          </div>
-        </div>
-      ))}
+      <FormattedMessage id="app.hello" />
+      <CurrentLocale
+        render={({ locale }) => {
+          const projects = data[locale]
+            ? data[locale].items.map(item => item.project)
+            : [];
+          return (
+            <div>
+              {projects.map(item => (
+                <div key={item.id}>
+                  <h2>{item.name}</h2>
+                  <div>
+                    {item.images.map(image => (
+                      <img
+                        key={image.id}
+                        src={image.thumbnail.src}
+                        alt={image.title}
+                        style={{ padding: 10 }}
+                      />
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          );
+        }}
+      />
     </div>
   );
 }

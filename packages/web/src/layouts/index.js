@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import styled from 'styled-components';
 
+import { TranslateProvider } from '../i18n/components';
 import { Header, Footer } from '../components';
 import '../style';
 
@@ -18,18 +19,20 @@ const Content = styled.div`
 
 function Wrapper({ children }) {
   return (
-    <Container>
-      <Helmet
-        title="ESC"
-        meta={[
-          { name: 'description', content: 'ESC' },
-          { name: 'keywords', content: 'ESC' },
-        ]}
-      />
-      <Header />
-      <Content>{children()}</Content>
-      <Footer />
-    </Container>
+    <TranslateProvider>
+      <Container>
+        <Helmet
+          title="ESC"
+          meta={[
+            { name: 'description', content: 'ESC' },
+            { name: 'keywords', content: 'ESC' },
+          ]}
+        />
+        <Header />
+        <Content>{children()}</Content>
+        <Footer />
+      </Container>
+    </TranslateProvider>
   );
 }
 

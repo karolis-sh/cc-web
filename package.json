@@ -12,11 +12,17 @@
     "prepush": "yarn lint"
   },
   "lint-staged": {
-    "*.js": ["eslint --fix", "git add"]
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
   },
   "devDependencies": {
+    "babel-eslint": "^8.1.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "eslint": "^4.14.0",
     "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-babel": "^4.1.2",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-prettier": "^2.4.0",
