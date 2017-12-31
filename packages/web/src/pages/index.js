@@ -4,7 +4,12 @@ import graphql from 'graphql';
 import { FormattedMessage } from 'react-intl';
 
 import { CurrentLocale } from '../i18n/components';
-import { Services, ContentTitle, ForwardButton } from '../components';
+import {
+  Services,
+  FeaturedProjects,
+  ContentTitle,
+  ForwardButton,
+} from '../components';
 
 function IndexPage({ data }) {
   return (
@@ -19,7 +24,6 @@ function IndexPage({ data }) {
       <ContentTitle>
         <FormattedMessage id="home.servicesTitle" />
       </ContentTitle>
-
       <CurrentLocale
         render={({ locale }) => {
           const services =
@@ -33,6 +37,15 @@ function IndexPage({ data }) {
       <ContentTitle>
         <FormattedMessage id="home.procejtsTitle" />
       </ContentTitle>
+      <CurrentLocale
+        render={({ locale }) => {
+          const projects =
+            data && data[`projects_${locale}`]
+              ? data[`projects_${locale}`].items.map(item => item.project)
+              : [];
+          return <FeaturedProjects items={projects} />;
+        }}
+      />
 
       <div className="mt4 mb5">
         <div className="tc mb3 fs2">
@@ -74,6 +87,46 @@ export const pageQuery = graphql`
         service: node {
           id
           text
+        }
+      }
+    }
+    projects_en: allContentfulProject(
+      filter: { node_locale: { eq: "en-US" }, featured: { eq: true } }
+    ) {
+      items: edges {
+        project: node {
+          id
+          name
+          images {
+            id
+            title
+            preview: resolutions(width: 1200) {
+              src
+            }
+            thumbnail: resolutions(width: 220, height: 220) {
+              src
+            }
+          }
+        }
+      }
+    }
+    projects_sv: allContentfulProject(
+      filter: { node_locale: { eq: "sv-SE" }, featured: { eq: true } }
+    ) {
+      items: edges {
+        project: node {
+          id
+          name
+          images {
+            id
+            title
+            preview: resolutions(width: 1200) {
+              src
+            }
+            thumbnail: resolutions(width: 220, height: 220) {
+              src
+            }
+          }
         }
       }
     }

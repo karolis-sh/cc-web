@@ -4,13 +4,14 @@ import styled from 'styled-components';
 
 const Image = styled.div`
   position: relative;
-  margin: 0 10px 20px 10px;
+  margin: 10px;
   height: 220px;
   width: 220px;
   cursor: pointer;
+  border-radius: 2px;
+  overflow: hidden;
 
   > img {
-    border-radius: 2px;
     height: 220px;
     width: 220px;
   }
