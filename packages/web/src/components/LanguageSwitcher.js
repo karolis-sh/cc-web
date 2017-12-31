@@ -15,7 +15,7 @@ const Flag = styled.div`
   width: 24px;
   height: 16px;
   border: 1px solid black;
-  background: url('images/flags/${props =>
+  background: url('/images/flags/${props =>
     props.language}.png') no-repeat center;
   cursor: pointer;
 

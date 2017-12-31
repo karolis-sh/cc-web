@@ -4,11 +4,14 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "try-build": "serve public"
+    "serve-build": "serve public",
+    "clean": "rm -rf .cache public"
   },
   "dependencies": {
+    "classnames": "^2.2.5",
     "dot-object": "^1.7.0",
     "dotenv": "^4.0.0",
+    "font-awesome": "^4.7.0",
     "gatsby": "^1.9.145",
     "gatsby-link": "^1.6.32",
     "gatsby-plugin-google-fonts": "^0.0.3",

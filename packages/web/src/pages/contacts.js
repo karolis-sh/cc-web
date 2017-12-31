@@ -1,9 +1,14 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
+
+import { ContentTitle } from '../components';
 
 function ContactsPage() {
   return (
     <div>
-      <h1>Contacts</h1>
+      <ContentTitle>
+        <FormattedMessage id="contact.title" />
+      </ContentTitle>
     </div>
   );
 }

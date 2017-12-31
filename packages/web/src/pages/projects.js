@@ -6,10 +6,14 @@ import Lightbox from 'react-images';
 import styled from 'styled-components';
 
 import { CurrentLocale } from '../i18n/components';
-import { ProjectImages, ProjectImage } from '../components';
+import {
+  ContentTitle,
+  ForwardButton,
+  ProjectImages,
+  ProjectImage,
+} from '../components';
 
 const ProjectTitle = styled.h1`
-  font-size: 1.4rem;
   border-bottom: 2px solid black;
   font-weight: bold;
 `;
@@ -33,7 +37,7 @@ class Project extends React.Component {
     const { name, images } = this.props;
     return (
       <div>
-        <ProjectTitle className="ph2 mb2">{name}</ProjectTitle>
+        <ProjectTitle className="ph2 mb2 fs4">{name}</ProjectTitle>
         <ProjectImages>
           {images.map((image, index) => (
             <ProjectImage
@@ -66,14 +70,15 @@ Project.propTypes = {
 function ProjectsPage({ data }) {
   return (
     <div>
-      <h1 className="ph2">
+      <ContentTitle className="ph2">
         <FormattedMessage id="projects.title" />
-      </h1>
+      </ContentTitle>
       <CurrentLocale
         render={({ locale }) => {
-          const projects = data[locale]
-            ? data[locale].items.map(item => item.project)
-            : [];
+          const projects =
+            data && data[`projects_${locale}`]
+              ? data[`projects_${locale}`].items.map(item => item.project)
+              : [];
           return (
             <div>
               {projects.map(item => <Project key={item.id} {...item} />)}
@@ -81,6 +86,17 @@ function ProjectsPage({ data }) {
           );
         }}
       />
+      <div className="mt4 mb5">
+        <div className="tc mb3 fs2">
+          <FormattedMessage id="contact.initiationText" />
+        </div>
+        <div className="tc">
+          <ForwardButton
+            url="/contacts"
+            text={<FormattedMessage id="contact.initiationAction" />}
+          />
+        </div>
+      </div>
     </div>
   );
 }
@@ -92,8 +108,10 @@ ProjectsPage.propTypes = {
 export default ProjectsPage;
 
 export const pageQuery = graphql`
-  query PageQuery {
-    en: allContentfulProject(filter: { node_locale: { eq: "en-US" } }) {
+  query ProjectsPageQuery {
+    projects_en: allContentfulProject(
+      filter: { node_locale: { eq: "en-US" } }
+    ) {
       items: edges {
         project: node {
           id
@@ -111,7 +129,9 @@ export const pageQuery = graphql`
         }
       }
     }
-    sv: allContentfulProject(filter: { node_locale: { eq: "sv-SE" } }) {
+    projects_sv: allContentfulProject(
+      filter: { node_locale: { eq: "sv-SE" } }
+    ) {
       items: edges {
         project: node {
           id

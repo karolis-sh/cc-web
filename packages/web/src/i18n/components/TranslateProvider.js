@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { IntlProvider, addLocaleData } from 'react-intl';
 
 import { DEFAULT_LOCALE, LOCALE_DATA } from '../constants';
-import { getLocale } from '../utils';
+import { getLocale, setLocale } from '../utils';
 import messages from '../messages';
 
 class TranslateProvider extends React.Component {
@@ -16,8 +16,16 @@ class TranslateProvider extends React.Component {
   getChildContext() {
     return {
       getLocale: () => this.state.locale,
-      setLocale: locale => this.setState({ locale }),
+      setLocale: locale => {
+        this.setState({ locale });
+        setLocale(locale);
+      },
     };
+  }
+
+  componentDidMount() {
+    // eslint-disable-next-line react/no-did-mount-set-state
+    this.setState({ locale: getLocale() });
   }
 
   render() {

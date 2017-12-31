@@ -10,7 +10,7 @@ const Image = styled.div`
   cursor: pointer;
 
   > img {
-    border-radius: 3px;
+    border-radius: 2px;
     height: 220px;
     width: 220px;
   }
