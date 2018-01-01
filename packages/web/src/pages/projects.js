@@ -9,7 +9,7 @@ import { ContentTitle, ForwardButton, Projects } from '../components';
 function ProjectsPage({ data }) {
   return (
     <div>
-      <ContentTitle className="ph2">
+      <ContentTitle className="ph2 mt4-ns">
         <FormattedMessage id="projects.title" />
       </ContentTitle>
       <CurrentLocale
@@ -21,7 +21,7 @@ function ProjectsPage({ data }) {
           return <Projects items={projects} />;
         }}
       />
-      <div className="mt4 mb5">
+      <div className="mt4 mt5-ns mb5">
         <div className="tc mb3 fs2">
           <FormattedMessage id="contact.initiationText" />
         </div>

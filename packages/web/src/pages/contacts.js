@@ -20,7 +20,7 @@ const Contacts = styled.div`
 function ContactsPage({ data }) {
   return (
     <div className="mh2">
-      <ContentTitle>
+      <ContentTitle className="mt4-ns">
         <FormattedMessage id="contact.title" />
       </ContentTitle>
 

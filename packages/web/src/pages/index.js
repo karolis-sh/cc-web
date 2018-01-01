@@ -14,14 +14,16 @@ import {
 function IndexPage({ data }) {
   return (
     <div className="mh2">
-      <ContentTitle>
-        <FormattedMessage id="home.welcomeTitle" />
-      </ContentTitle>
-      <p className="tj">
-        <FormattedMessage id="home.welcomeText" />
-      </p>
+      <div className="dn-ns">
+        <ContentTitle>
+          <FormattedMessage id="home.welcomeTitle" />
+        </ContentTitle>
+        <p className="tj">
+          <FormattedMessage id="home.welcomeText" />
+        </p>
+      </div>
 
-      <ContentTitle>
+      <ContentTitle className="mt4-ns">
         <FormattedMessage id="home.servicesTitle" />
       </ContentTitle>
       <CurrentLocale
@@ -34,7 +36,7 @@ function IndexPage({ data }) {
         }}
       />
 
-      <ContentTitle>
+      <ContentTitle className="mt4-ns">
         <FormattedMessage id="home.procejtsTitle" />
       </ContentTitle>
       <CurrentLocale
@@ -47,7 +49,7 @@ function IndexPage({ data }) {
         }}
       />
 
-      <div className="mt4 mb5">
+      <div className="mt4 mt5-ns mb5">
         <div className="tc mb3 fs2">
           <FormattedMessage id="contact.initiationText" />
         </div>

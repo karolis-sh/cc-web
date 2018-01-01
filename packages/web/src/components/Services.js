@@ -28,7 +28,7 @@ function Services({ items }) {
   return (
     <Wrapper>
       {items.map(item => (
-        <Box key={item.id} className="shadow pv2 ph3 mb3">
+        <Box key={item.id} className="shadow pv2 ph3 mv2">
           <FAIcon type="chevron-right" className="mr3" />
           {item.text}
         </Box>

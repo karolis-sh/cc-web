@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'gatsby-link';
+import Link, { withPrefix } from 'gatsby-link';
 import { FormattedMessage } from 'react-intl';
 import styled from 'styled-components';
 
@@ -36,12 +36,6 @@ const Brand = styled(Link)`
   text-decoration: none;
 `;
 
-const SmallNav = styled.div`
-  ${media.notSmall`
-    display: none;
-  `};
-`;
-
 const NotSmallNav = styled.div`
   display: none;
   background: rgba(255, 255, 255, 0.9);
@@ -66,18 +60,26 @@ const NavLink = styled(Link)`
   }
 `;
 
+const WelcomeContainer = styled.div`
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 2px;
+  width: 50%;
+`;
+
 function Header() {
+  // eslint-disable-next-line no-restricted-globals
+  const showWelcome = location.pathname === withPrefix('/');
   return (
     <Wrapper>
       <HeaderWrapper className="ma2">
-        <div className="container ph2 pb6-ns">
-          <SmallNav>
+        <div className="container ph2">
+          <div className="dn-ns">
             <Brand to="/" className="fs3 b">
               {data.companyName}
             </Brand>
-          </SmallNav>
+          </div>
           <NotSmallNav className="pv2 ph3 mb4">
-            <Brand to="/" className="fs4 b">
+            <Brand to="/" className="fs4 b mr3">
               {data.companyName}
             </Brand>
             <NavLink exact to="/" className="pa2 b" activeClassName="active">
@@ -94,6 +96,18 @@ function Header() {
         <LanguageSwitcher />
         <HamburgerMenu />
       </HeaderWrapper>
+      {showWelcome && (
+        <div className="container">
+          <WelcomeContainer className="dn db-ns ml5 mt3 mb5 ph3 pv2">
+            <h1 className="fs4">
+              <FormattedMessage id="home.welcomeTitle" />
+            </h1>
+            <p className="tj">
+              <FormattedMessage id="home.welcomeText" />
+            </p>
+          </WelcomeContainer>
+        </div>
+      )}
     </Wrapper>
   );
 }
