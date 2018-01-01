@@ -9,6 +9,7 @@ const COLORS = {
   gray1: '#222222',
   gray2: '#333333',
   gray3: '#494949',
+  gray4: '#a9a9a9',
 };
 
 const theme = {
@@ -17,6 +18,7 @@ const theme = {
     gray1: COLORS.gray1,
     gray2: COLORS.gray2,
     gray3: COLORS.gray3,
+    gray4: COLORS.gray4,
   },
 };
 
@@ -74,6 +76,10 @@ injectGlobal`
 
   .fs4 {
     font-size: 1.4rem;
+  }
+
+  .color-accent-1 {
+    color: ${theme.color.accent1};
   }
 `;
 

@@ -16,10 +16,6 @@ const Wrapper = styled(Link)`
     color: white;
   }
 
-  > *:last-child {
-    color: ${props => props.theme.color.accent1};
-  }
-
   > * {
     vertical-align: middle;
   }
@@ -29,7 +25,7 @@ function ForwardButton({ className, url, text }) {
   return (
     <Wrapper className={cx('shadow pv1 ph3', className)} to={url}>
       <span className="fs3">{text}</span>
-      <FAIcon type="angle-double-right" className="fa-2x ml3" />
+      <FAIcon type="angle-double-right" className="color-accent-1 fa-2x ml3" />
     </Wrapper>
   );
 }

@@ -22,4 +22,7 @@ export default {
       'Har du några frågor eller är intresserad av att göra affärer med oss?',
     initiationAction: 'KONTAKTA OSS',
   },
+  footer: {
+    solution: 'Lösning av',
+  },
 };

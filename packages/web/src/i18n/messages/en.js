@@ -22,4 +22,7 @@ export default {
       'Do you have any questions, or are interested in doing business with us?',
     initiationAction: 'CONTACT US',
   },
+  footer: {
+    solution: 'Solution by',
+  },
 };
