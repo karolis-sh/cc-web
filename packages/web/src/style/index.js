@@ -6,6 +6,7 @@ import './index.scss';
 
 const COLORS = {
   orange1: '#D4690C',
+  black1: '#222',
   gray1: '#222222',
   gray2: '#333333',
   gray3: '#494949',
@@ -15,6 +16,7 @@ const COLORS = {
 const theme = {
   color: {
     accent1: COLORS.orange1,
+    black1: COLORS.black1,
     gray1: COLORS.gray1,
     gray2: COLORS.gray2,
     gray3: COLORS.gray3,
@@ -31,7 +33,7 @@ injectGlobal`
       "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
     line-height: 1.5;
-    color: #222;
+    color: ${theme.color.black1};
     background-color: #fff;
   }
 
