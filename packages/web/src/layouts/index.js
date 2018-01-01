@@ -17,7 +17,8 @@ const Content = styled.div`
   flex: 1;
 `;
 
-function Wrapper({ children }) {
+function Wrapper({ children, location: { pathname } }) {
+  // console.log(props);
   return (
     <ThemeProvider theme={theme}>
       <TranslateProvider>
@@ -33,7 +34,7 @@ function Wrapper({ children }) {
             <meta httpEquiv="Cache-control" content="public" />
             <meta httpEquiv="x-ua-compatible" content="ie=edge" />
           </Helmet>
-          <Header />
+          <Header pathname={pathname} />
           <Content>
             <div className="container ph2">{children()}</div>
           </Content>
@@ -46,6 +47,9 @@ function Wrapper({ children }) {
 
 Wrapper.propTypes = {
   children: PropTypes.func,
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 Wrapper.defaultProps = {

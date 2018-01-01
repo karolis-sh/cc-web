@@ -83,6 +83,10 @@ injectGlobal`
   .color-accent-1 {
     color: ${theme.color.accent1};
   }
+
+  .tj {
+    text-align: justify;
+  }
 `;
 
 export { theme, media };
