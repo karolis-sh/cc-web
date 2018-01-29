@@ -3,10 +3,16 @@ node_modules
 package-lock.json
 *.log*
 
-# Other
-.DS_Store
+# Configs
+.env
+
+# Build products
+/.cache
+/public
+
+# IDE
+.idea
 .vscode
 
-# Project specific
-/packages/web/.cache/
-/packages/web/public/
+# Other
+.DS_Store

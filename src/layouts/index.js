@@ -18,7 +18,6 @@ const Content = styled.div`
 `;
 
 function Wrapper({ children, location: { pathname } }) {
-  // console.log(props);
   return (
     <ThemeProvider theme={theme}>
       <TranslateProvider>

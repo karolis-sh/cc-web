@@ -19,6 +19,7 @@ module.exports = {
         accessToken: keys.contentful.accessToken,
       },
     },
+    'gatsby-plugin-netlify-cms',
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
