@@ -9,6 +9,7 @@ exports.onCreateNode = ({ node, boundActionCreators }) => {
     const contentType = contentKey.split('/')[0];
     const frontmatter = { ...node.frontmatter };
 
+    frontmatter.order = Number(frontmatter.order);
     if (frontmatter.images) {
       frontmatter.images = frontmatter.images.map(item => ({
         ...item,
