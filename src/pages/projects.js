@@ -46,7 +46,7 @@ export const pageQuery = graphql`
   query ProjectsPage {
     projects: allNetlifyContent(
       filter: { contentType: { eq: "projects" } }
-      sort: { fields: [frontmatter___order] }
+      sort: { fields: [frontmatter___order], order: DESC }
     ) {
       edges {
         node {

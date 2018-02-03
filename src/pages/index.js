@@ -69,7 +69,7 @@ export const pageQuery = graphql`
   query IndexPage {
     services: allNetlifyContent(
       filter: { contentType: { eq: "services" } }
-      sort: { fields: [frontmatter___order] }
+      sort: { fields: [frontmatter___order], order: DESC }
     ) {
       edges {
         node {
@@ -87,7 +87,7 @@ export const pageQuery = graphql`
         contentType: { eq: "projects" }
         frontmatter: { featured: { eq: true } }
       }
-      sort: { fields: [frontmatter___order] }
+      sort: { fields: [frontmatter___order], order: DESC }
     ) {
       edges {
         node {

@@ -52,7 +52,7 @@ class FeaturedProjects extends React.Component {
                 onClick={() => this.onOpen(item.id)}
                 counterValue={`1 / ${item.images.length}`}
               />
-              <div className="mh2 mb1 fs1 b">{item.name}</div>
+              <div className="mh2 mb1 fs1 b">{item.title}</div>
             </div>
           ))}
         </Projects>
