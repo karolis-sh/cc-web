@@ -10,22 +10,16 @@ import {
   ContentTitle,
   ForwardButton,
 } from '../components';
+import { mapProjects } from '../utils';
 
 function IndexPage({ data }) {
-  console.log(data);
   return (
     <CurrentLocale
       render={({ locale }) => {
         const services = data.services.edges.map(item => ({
           title: item.node.frontmatter[`title_${locale}`],
         }));
-        const projects = data.projects.edges.map((item, index) => ({
-          id: index,
-          title: item.node.frontmatter[`title_${locale}`],
-          images: (item.node.frontmatter.images || []).map(
-            imageItem => imageItem.image.transform
-          ),
-        }));
+        const projects = mapProjects(data.projects, locale);
         return (
           <div className="mh2">
             <div className="dn-ns">
@@ -97,15 +91,17 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
+          id: contentKey
           frontmatter {
             title_en: title
             title_sv
             order
             featured
             images {
+              enabled
               image {
                 transform: childImageSharp {
-                  preview: resolutions(width: 1200, quality: 80) {
+                  preview: resolutions(width: 1200, quality: 85) {
                     src
                   }
                   thumbnail: resolutions(width: 220, height: 220) {

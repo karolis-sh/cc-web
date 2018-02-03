@@ -36,17 +36,16 @@ class Project extends React.Component {
 
   render() {
     const { open, currentImage } = this.state;
-    const { name, images } = this.props;
+    const { title, images } = this.props;
     return (
       <div className="mb4">
-        <ProjectTitle className="ph2 mb1 fs4">{name}</ProjectTitle>
+        <ProjectTitle className="ph2 mb1 fs4">{title}</ProjectTitle>
         <ProjectImages>
-          {images.map((image, index) => (
+          {images.map((item, index) => (
             <ProjectImage
-              key={image.id}
+              key={item.preview.src}
               onClick={() => this.onOpen(index)}
-              image={image.thumbnail}
-              alt={image.title}
+              image={item.thumbnail}
               counterValue={`${index + 1} / ${images.length}`}
             />
           ))}
@@ -65,7 +64,7 @@ class Project extends React.Component {
 }
 
 Project.propTypes = {
-  name: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
   images: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
 };
 
