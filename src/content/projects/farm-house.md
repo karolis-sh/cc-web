@@ -4,13 +4,13 @@ title_sv: Fondgård
 order: 1
 featured: false
 images:
-  - featured: true
+  - enabled: true
     image: /images/uploads/red_farm_house-front.jpg
-  - featured: true
+  - enabled: true
     image: /images/uploads/red_farm_house-stairs.jpg
-  - featured: true
+  - enabled: true
     image: /images/uploads/red_farm_house-roof_2.jpg
-  - featured: false
+  - enabled: false
     image: /images/uploads/red_farm_house-roof_1.jpg
 ---
 

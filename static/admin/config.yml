@@ -31,4 +31,4 @@ collections:
         widget: list
         fields:
           - { label: Image, name: image, widget: image }
-          - { label: Featured, name: featured, default: true, widget: boolean }
+          - { label: Enabled, name: enabled, default: true, widget: boolean }

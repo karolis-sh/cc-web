@@ -89,7 +89,10 @@ export const pageQuery = graphql`
     }
 
     projects: allNetlifyContent(
-      filter: { contentType: { eq: "projects" } }
+      filter: {
+        contentType: { eq: "projects" }
+        frontmatter: { featured: { eq: true } }
+      }
       sort: { fields: [frontmatter___order] }
     ) {
       edges {
