@@ -49,7 +49,6 @@ class FeaturedProjects extends React.Component {
             <div key={item.id}>
               <ProjectImage
                 image={item.images[0].thumbnail}
-                alt={item.name}
                 onClick={() => this.onOpen(item.id)}
                 counterValue={`1 / ${item.images.length}`}
               />
@@ -60,7 +59,7 @@ class FeaturedProjects extends React.Component {
         <Lightbox
           isOpen={isOpen}
           images={
-            selectedProject
+            selectedProject != null
               ? items
                   .find(item => item.id === selectedProject)
                   .images.map(item => ({ src: item.preview.src }))
@@ -79,7 +78,18 @@ class FeaturedProjects extends React.Component {
 FeaturedProjects.propTypes = {
   items: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string.isRequired,
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+      images: PropTypes.arrayOf(
+        PropTypes.shape({
+          preview: PropTypes.shape({
+            src: PropTypes.string.isRequired,
+          }).isRequired,
+          thumbnail: PropTypes.shape({
+            src: PropTypes.string.isRequired,
+          }).isRequired,
+        })
+      ).isRequired,
     })
   ).isRequired,
 };

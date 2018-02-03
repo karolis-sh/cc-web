@@ -3,9 +3,6 @@ node_modules
 package-lock.json
 *.log*
 
-# Configs
-.env
-
 # Build products
 /.cache
 /public

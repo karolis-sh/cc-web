@@ -28,9 +28,9 @@ function Services({ items }) {
   return (
     <Wrapper>
       {items.map(item => (
-        <Box key={item.id} className="shadow pv2 ph3 mv2">
+        <Box key={item.title} className="shadow pv2 ph3 mv2">
           <FAIcon type="chevron-right" className="mr3" />
-          {item.text}
+          {item.title}
         </Box>
       ))}
     </Wrapper>
@@ -40,8 +40,7 @@ function Services({ items }) {
 Services.propTypes = {
   items: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      text: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
     })
   ).isRequired,
 };

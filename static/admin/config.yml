@@ -3,16 +3,30 @@ backend:
   repo: buz-zard/cc-web
   branch: feat/netlify
 
-media_folder: static/assets
-
-publish_mode: editorial_workflow
+media_folder: static/images/uploads
+public_folder: /images/uploads
 
 collections:
   - label: Service
     name: service
-    folder: src/content/service
+    folder: src/content/services
     create: true
     fields:
       - { name: title, label: Title EN }
       - { name: title_sv, label: Title SV }
-      - { name: order, label: Order, widget: number, min: 1, default: 1 }
+      - { name: order, label: Order, widget: number, default: 1 }
+  
+  - label: Project
+    name: project
+    folder: src/content/projects
+    create: true
+    fields:
+      - { label: Title EN, name: title }
+      - { label: Title SV, name: title_sv }
+      - { label: Order, name: order, widget: number, default: 1 }
+      - { label: Featured, name: featured, default: false, widget: boolean }
+      - label: Images
+        name: images
+        widget: list
+        fields:
+         - {label: Image, name: image, widget: image}

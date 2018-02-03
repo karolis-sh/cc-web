@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import graphql from 'graphql';
 import { FormattedMessage } from 'react-intl';
 import ReactMarkdown from 'react-markdown';
 import styled from 'styled-components';
@@ -46,40 +45,3 @@ ContactsPage.propTypes = {
 };
 
 export default ContactsPage;
-
-export const pageQuery = graphql`
-  query ContactsPageQuery {
-    contact_en_esc: contentfulMarkdown(
-      key: { eq: "esc.contacts" }
-      node_locale: { eq: "en-US" }
-    ) {
-      markdown: childContentfulMarkdownValueTextNode {
-        value
-      }
-    }
-    contact_sv_esc: contentfulMarkdown(
-      key: { eq: "esc.contacts" }
-      node_locale: { eq: "sv-SE" }
-    ) {
-      markdown: childContentfulMarkdownValueTextNode {
-        value
-      }
-    }
-    contact_en_statrem: contentfulMarkdown(
-      key: { eq: "statrem.contacts" }
-      node_locale: { eq: "en-US" }
-    ) {
-      markdown: childContentfulMarkdownValueTextNode {
-        value
-      }
-    }
-    contact_sv_statrem: contentfulMarkdown(
-      key: { eq: "statrem.contacts" }
-      node_locale: { eq: "sv-SE" }
-    ) {
-      markdown: childContentfulMarkdownValueTextNode {
-        value
-      }
-    }
-  }
-`;

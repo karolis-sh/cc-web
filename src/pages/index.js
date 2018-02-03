@@ -12,55 +12,56 @@ import {
 } from '../components';
 
 function IndexPage({ data }) {
+  console.log(data);
   return (
-    <div className="mh2">
-      <div className="dn-ns">
-        <ContentTitle>
-          <FormattedMessage id="home.welcomeTitle" />
-        </ContentTitle>
-        <p className="tj">
-          <FormattedMessage id="home.welcomeText" />
-        </p>
-      </div>
+    <CurrentLocale
+      render={({ locale }) => {
+        const services = data.services.edges.map(item => ({
+          title: item.node.frontmatter[`title_${locale}`],
+        }));
+        const projects = data.projects.edges.map((item, index) => ({
+          id: index,
+          title: item.node.frontmatter[`title_${locale}`],
+          images: (item.node.frontmatter.images || []).map(
+            imageItem => imageItem.image.transform
+          ),
+        }));
+        return (
+          <div className="mh2">
+            <div className="dn-ns">
+              <ContentTitle>
+                <FormattedMessage id="home.welcomeTitle" />
+              </ContentTitle>
+              <p className="tj">
+                <FormattedMessage id="home.welcomeText" />
+              </p>
+            </div>
 
-      <ContentTitle className="mt4-ns">
-        <FormattedMessage id="home.servicesTitle" />
-      </ContentTitle>
-      <CurrentLocale
-        render={({ locale }) => {
-          const services =
-            data && data[`services_${locale}`]
-              ? data[`services_${locale}`].items.map(item => item.service)
-              : [];
-          return <Services items={services} />;
-        }}
-      />
+            <ContentTitle className="mt4-ns">
+              <FormattedMessage id="home.servicesTitle" />
+            </ContentTitle>
+            <Services items={services} />
 
-      <ContentTitle className="mt4-ns">
-        <FormattedMessage id="home.procejtsTitle" />
-      </ContentTitle>
-      <CurrentLocale
-        render={({ locale }) => {
-          const projects =
-            data && data[`projects_${locale}`]
-              ? data[`projects_${locale}`].items.map(item => item.project)
-              : [];
-          return <FeaturedProjects items={projects} />;
-        }}
-      />
+            <ContentTitle className="mt4-ns">
+              <FormattedMessage id="home.procejtsTitle" />
+            </ContentTitle>
+            <FeaturedProjects items={projects} />
 
-      <div className="mt4 mt5-ns mb5">
-        <div className="tc mb3 fs2">
-          <FormattedMessage id="contact.initiationText" />
-        </div>
-        <div className="tc">
-          <ForwardButton
-            url="/contacts"
-            text={<FormattedMessage id="contact.initiationAction" />}
-          />
-        </div>
-      </div>
-    </div>
+            <div className="mt4 mt5-ns mb5">
+              <div className="tc mb3 fs2">
+                <FormattedMessage id="contact.initiationText" />
+              </div>
+              <div className="tc">
+                <ForwardButton
+                  url="/contacts"
+                  text={<FormattedMessage id="contact.initiationAction" />}
+                />
+              </div>
+            </div>
+          </div>
+        );
+      }}
+    />
   );
 }
 
@@ -71,62 +72,44 @@ IndexPage.propTypes = {
 export default IndexPage;
 
 export const pageQuery = graphql`
-  query IndexPageQuery {
-    services_en: allContentfulService(
-      filter: { node_locale: { eq: "en-US" } }
+  query IndexPage {
+    services: allNetlifyContent(
+      filter: { contentType: { eq: "services" } }
+      sort: { fields: [frontmatter___order] }
     ) {
-      items: edges {
-        service: node {
-          id
-          text
-        }
-      }
-    }
-    services_sv: allContentfulService(
-      filter: { node_locale: { eq: "sv-SE" } }
-    ) {
-      items: edges {
-        service: node {
-          id
-          text
-        }
-      }
-    }
-    projects_en: allContentfulProject(
-      filter: { node_locale: { eq: "en-US" }, featured: { eq: true } }
-    ) {
-      items: edges {
-        project: node {
-          id
-          name
-          images {
-            id
-            title
-            preview: resolutions(width: 1200) {
-              src
-            }
-            thumbnail: resolutions(width: 220, height: 220) {
-              src
-            }
+      edges {
+        node {
+          frontmatter {
+            title_en: title
+            title_sv
+            order
           }
         }
       }
     }
-    projects_sv: allContentfulProject(
-      filter: { node_locale: { eq: "sv-SE" }, featured: { eq: true } }
+
+    projects: allNetlifyContent(
+      filter: { contentType: { eq: "projects" } }
+      sort: { fields: [frontmatter___order] }
     ) {
-      items: edges {
-        project: node {
-          id
-          name
-          images {
-            id
-            title
-            preview: resolutions(width: 1200) {
-              src
-            }
-            thumbnail: resolutions(width: 220, height: 220) {
-              src
+      edges {
+        node {
+          frontmatter {
+            title_en: title
+            title_sv
+            order
+            featured
+            images {
+              image {
+                transform: childImageSharp {
+                  preview: resolutions(width: 1200, quality: 80) {
+                    src
+                  }
+                  thumbnail: resolutions(width: 220, height: 220) {
+                    src
+                  }
+                }
+              }
             }
           }
         }

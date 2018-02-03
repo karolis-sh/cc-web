@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import graphql from 'graphql';
 import { FormattedMessage } from 'react-intl';
 
 import { CurrentLocale } from '../i18n/components';
@@ -39,50 +38,3 @@ function ProjectsPage({ data }) {
 ProjectsPage.propTypes = {
   data: PropTypes.shape({}).isRequired,
 };
-
-export default ProjectsPage;
-
-export const pageQuery = graphql`
-  query ProjectsPageQuery {
-    projects_en: allContentfulProject(
-      filter: { node_locale: { eq: "en-US" } }
-    ) {
-      items: edges {
-        project: node {
-          id
-          name
-          images {
-            id
-            title
-            preview: resolutions(width: 1200) {
-              src
-            }
-            thumbnail: resolutions(width: 220, height: 220) {
-              src
-            }
-          }
-        }
-      }
-    }
-    projects_sv: allContentfulProject(
-      filter: { node_locale: { eq: "sv-SE" } }
-    ) {
-      items: edges {
-        project: node {
-          id
-          name
-          images {
-            id
-            title
-            preview: resolutions(width: 1200) {
-              src
-            }
-            thumbnail: resolutions(width: 220, height: 220) {
-              src
-            }
-          }
-        }
-      }
-    }
-  }
-`;

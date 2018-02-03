@@ -1,6 +1,6 @@
 const target = process.env.GATSBY_DATA_TARGET;
 if (['esc', 'statrem'].indexOf(target) === -1) {
-  throw new Error(`Invalid DATA_TARGET - ${JSON.stringify(target)}`);
+  throw new Error(`Invalid GATSBY_DATA_TARGET - ${JSON.stringify(target)}`);
 }
 
 const data = {

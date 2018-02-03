@@ -27,11 +27,11 @@ const Image = styled.div`
   }
 `;
 
-function ProjectImage({ onClick, image, alt, counterValue }) {
+function ProjectImage({ onClick, image, counterValue }) {
   return (
     <Image onClick={onClick}>
       <div className="project-image-filter" />
-      <img src={image.src} alt={alt} />
+      <img src={image.src} alt="preview" />
       <div className="counter">{counterValue}</div>
     </Image>
   );
@@ -42,7 +42,6 @@ ProjectImage.propTypes = {
   image: PropTypes.shape({
     src: PropTypes.string.isRequired,
   }).isRequired,
-  alt: PropTypes.string.isRequired,
   counterValue: PropTypes.string.isRequired,
 };
 
