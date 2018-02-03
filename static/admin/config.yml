@@ -5,6 +5,7 @@ backend:
 
 media_folder: static/images/uploads
 public_folder: /images/uploads
+publish_mode: editorial_workflow
 
 collections:
   - label: Service
@@ -12,9 +13,9 @@ collections:
     folder: src/content/services
     create: true
     fields:
-      - { name: title, label: Title EN }
-      - { name: title_sv, label: Title SV }
-      - { name: order, label: Order, widget: number, default: 1 }
+      - { label: Title EN, name: title }
+      - { label: Title SV, name: title_sv }
+      - { label: Order, name: order, widget: number, default: 1 }
   
   - label: Project
     name: project
@@ -29,4 +30,5 @@ collections:
         name: images
         widget: list
         fields:
-         - {label: Image, name: image, widget: image}
+          - { label: Image, name: image, widget: image }
+          - { label: Featured, name: featured, default: true, widget: boolean }
