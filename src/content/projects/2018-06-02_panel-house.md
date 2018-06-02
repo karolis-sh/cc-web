@@ -2,7 +2,7 @@
 title: Panel house
 title_sv: Panel hus
 order: 6
-featured: false
+featured: true
 images:
   - enabled: true
     image: /images/uploads/panel_house-front-left.jpg

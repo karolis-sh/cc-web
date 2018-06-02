@@ -1,7 +1,7 @@
 ---
 title: Holiday house
 title_sv: Semesterhus
-order: 10
+order: 8
 featured: true
 images:
   - enabled: true

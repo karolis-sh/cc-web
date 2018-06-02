@@ -2,7 +2,7 @@
 title: Custom built stairs
 title_sv: Anpassade byggda trappor
 order: 100
-featured: false
+featured: true
 images:
   - enabled: true
     image: /images/uploads/stairs_result-1.jpg
