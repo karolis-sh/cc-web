@@ -1,7 +1,7 @@
 ---
 title: House with a sauna
 title_sv: Hus med bastu
-order: '3'
+order: 1
 featured: false
 images:
   - enabled: true

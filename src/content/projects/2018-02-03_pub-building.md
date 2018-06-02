@@ -1,7 +1,7 @@
 ---
 title: Pub building
 title_sv: Pubbyggnad
-order: 1
+order: 5
 featured: false
 images:
   - enabled: true

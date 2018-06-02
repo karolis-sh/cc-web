@@ -1,7 +1,7 @@
 ---
 title: Farm house
 title_sv: Fondgård
-order: 1
+order: 4
 featured: false
 images:
   - enabled: true

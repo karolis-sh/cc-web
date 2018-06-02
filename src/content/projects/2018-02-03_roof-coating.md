@@ -1,7 +1,7 @@
 ---
 title: Roof coating
 title_sv: Takbeläggning
-order: 1
+order: 3
 featured: true
 images:
   - enabled: true
