@@ -26,7 +26,11 @@ const Link = styled.a`
 
 function ContactsPage({ data }) {
   const contacts = data.contacts.edges.map(
-    ({ node: { frontmatter: { title, phone } } }) => ({
+    ({
+      node: {
+        frontmatter: { title, phone },
+      },
+    }) => ({
       title,
       phone,
     })
