@@ -35,8 +35,8 @@ function Footer() {
         </div>
         <div className="tc mt3">
           <FormattedMessage id="footer.solution" /> -{' '}
-          <Link href="https://kode.lt/" target="_blank">
-            kode.lt
+          <Link href="https://karolis.sh/" target="_blank">
+            karolis.sh
           </Link>
         </div>
       </div>

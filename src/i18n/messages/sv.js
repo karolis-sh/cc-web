@@ -21,6 +21,7 @@ export default {
     initiationText:
       'Har du några frågor eller är intresserad av att göra affärer med oss?',
     initiationAction: 'KONTAKTA OSS',
+    text: 'Tveka inte att kontakta oss om du har några frågor eller förslag.',
   },
   footer: {
     solution: 'Lösning av',

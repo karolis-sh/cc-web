@@ -32,7 +32,6 @@
     "react-burger-menu": "^2.2.3",
     "react-images": "^0.5.14",
     "react-intl": "^2.4.0",
-    "react-markdown": "^3.1.4",
     "remark-parse": "^5.0.0",
     "styled-components": "^2.4.0",
     "tachyons-sass": "^4.9.2"

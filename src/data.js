@@ -10,6 +10,7 @@ const data = {
     urlName: 'esconstruction.eu',
     startYear: 2017,
     companyName: 'Eco Scandinavian Construction',
+    email: 'info@esconstruction.eu',
   },
   statrem: {
     $key: 'statrem',
