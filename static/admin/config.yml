@@ -1,0 +1,45 @@
+backend:
+  name: github
+  repo: buz-zard/cc-web
+  branch: feat/netlify
+
+media_folder: static/images/uploads
+public_folder: /images/uploads
+publish_mode: editorial_workflow
+
+collections:
+  - label: Service
+    name: service
+    folder: src/content/services
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
+    fields:
+      - { label: Title EN, name: title }
+      - { label: Title SV, name: title_sv }
+      - { label: Order, name: order, widget: number, default: 1 }
+
+  - label: Project
+    name: project
+    folder: src/content/projects
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
+    fields:
+      - { label: Title EN, name: title }
+      - { label: Title SV, name: title_sv }
+      - { label: Order, name: order, widget: number, default: 1 }
+      - { label: Featured, name: featured, default: false, widget: boolean }
+      - label: Images
+        name: images
+        widget: list
+        fields:
+          - { label: Image, name: image, widget: image }
+          - { label: Enabled, name: enabled, default: true, widget: boolean }
+
+  - label: Contacts
+    name: contact
+    folder: src/content/contacts
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
+    fields:
+      - { label: Title, name: title, required: true }
+      - { label: Phone, name: phone }

@@ -1,9 +1,12 @@
 {
   "extends": ["airbnb", "prettier"],
-  "plugins": ["babel", "react", "prettier"],
+  "plugins": ["react", "prettier"],
   "parser": "babel-eslint",
   "env": {
     "browser": true
+  },
+  "settings": {
+    "import/core-modules": ["react", "prop-types", "react-helmet", "graphql"]
   },
   "rules": {
     "prettier/prettier": "error",
@@ -14,7 +17,6 @@
     "jsx-a11y/no-static-element-interactions": [0],
     "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
     "react/jsx-first-prop-new-line": 0,
-    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
-    "max-len": ["error", 80]
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }]
   }
 }
