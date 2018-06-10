@@ -32,6 +32,10 @@ function Wrapper({ children, location: { pathname } }) {
             <html lang="en" />
             <meta httpEquiv="Cache-control" content="public" />
             <meta httpEquiv="x-ua-compatible" content="ie=edge" />
+            <meta
+              name="google-site-verification"
+              content="NWrrGB31y_lYtD7snlWTGiULuYIey4CuzkTsBw-uwKw"
+            />
           </Helmet>
           <Header pathname={pathname} />
           <Content>
