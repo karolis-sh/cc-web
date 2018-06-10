@@ -6,5 +6,7 @@
 **/node_modules
 package.json
 
-# Project specific
-/packages/web/public
+# Build
+/public
+/venv
+

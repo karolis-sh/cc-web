@@ -1,12 +1,18 @@
+# dependencies
+/venv
+
 # npm files
 node_modules
 package-lock.json
 *.log*
 
-# Other
-.DS_Store
+# Build products
+/.cache
+/public
+
+# IDE
+.idea
 .vscode
 
-# Project specific
-/packages/web/.cache/
-/packages/web/public/
+# Other
+.DS_Store
