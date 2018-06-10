@@ -2,4 +2,7 @@
 
 # Project specific
 /.cache/
+
+# Build
 /public
+/venv

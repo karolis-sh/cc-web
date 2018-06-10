@@ -9,7 +9,7 @@
   },
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "develop": "GATSBY_DATA_TARGET=${GATSBY_DATA_TARGET:=esc} gatsby develop",
     "serve-build": "serve public",
     "clean": "rm -rf .cache public",
     "lint": "eslint .",
