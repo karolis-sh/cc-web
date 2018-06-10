@@ -14,8 +14,9 @@
     "clean": "rm -rf .cache public",
     "lint": "eslint .",
     "format": "prettier '**/*.*' --write",
+    "qa": "yarn lint",
     "precommit": "lint-staged",
-    "prepush": "yarn lint"
+    "prepush": "yarn qa"
   },
   "dependencies": {
     "classnames": "^2.2.6",
