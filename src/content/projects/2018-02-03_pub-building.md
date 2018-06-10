@@ -9,7 +9,7 @@ images:
   - enabled: true
     image: /images/uploads/red_bar-inside_1.jpg
   - enabled: true
-  - image: /images/uploads/red_bar-inside_2.jpg
+    image: /images/uploads/red_bar-inside_2.jpg
   - enabled: true
     image: /images/uploads/red_bar-inside_bar_1.jpg
   - enabled: true
@@ -17,7 +17,7 @@ images:
   - enabled: true
     image: /images/uploads/red_bar-inside_door.jpg
   - enabled: true
-  - image: /images/uploads/red_bar-inside_wc.jpg
+    image: /images/uploads/red_bar-inside_wc.jpg
   - enabled: true
     image: /images/uploads/red_bar-fasad.jpg
   - enabled: true
