@@ -32,3 +32,28 @@ exports.onCreateNode = ({ node, boundActionCreators }) => {
     });
   }
 };
+
+exports.modifyWebpackConfig = ({ config, stage }) => {
+  const timestamp = Date.now();
+  switch (stage) {
+    case 'build-javascript':
+      config.merge({
+        output: {
+          filename: `_${timestamp}-[name]-[chunkhash].css`,
+          chunkFilename: `_${timestamp}-[name]-[chunkhash].css`,
+        },
+      });
+      break;
+    case 'build-css':
+      config.merge({
+        output: {
+          filename: `_${timestamp}-[name]-[chunkhash].css`,
+          chunkFilename: `_${timestamp}-[name]-[chunkhash].css`,
+        },
+      });
+      break;
+    default:
+      break;
+  }
+  return config;
+};
