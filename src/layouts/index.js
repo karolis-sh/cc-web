@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import styled, { ThemeProvider } from 'styled-components';
-import WebFont from 'webfontloader';
 
 import { TranslateProvider } from '../i18n/components';
 import { Header, Footer } from '../components';
@@ -21,7 +20,19 @@ const Content = styled.div`
 
 class Wrapper extends React.Component {
   componentDidMount() {
-    WebFont.load({ google: { families: ['Asap'] } });
+    if (!document.getElementById('webfontloader')) {
+      const wf = document.createElement('script');
+      const s = document.scripts[0];
+      wf.src =
+        'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+      wf.async = true;
+      wf.id = 'webfontloader';
+      wf.onload = () => {
+        global.WebFont.load({ google: { families: ['Asap'] } });
+      };
+
+      s.parentNode.insertBefore(wf, s);
+    }
   }
 
   render() {
