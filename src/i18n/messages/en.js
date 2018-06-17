@@ -11,6 +11,7 @@ export default {
     welcomeText:
       'We are a responsible construction company that provides high quality services for our customers. Quality, time and price combination bring the best results in every project we participate, leaving our customers and partners satisfied with the end result.', // eslint-disable-line max-len
     servicesTitle: 'OUR SERVICES',
+    certificates: 'OUR CERTIFICATES',
     procejtsTitle: 'FEATURED PROJECTS',
   },
   projects: {

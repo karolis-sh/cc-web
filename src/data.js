@@ -31,6 +31,10 @@ const data = {
     ].map(({ property, ...props }) => (
       <meta key={property} property={`og:${property}`} {...props} />
     )),
+    certificates: [
+      'v1529267260/Eco%20Scandinavian%20Construction/cert_20180129_00002_002.jpg',
+      'v1529267260/Eco%20Scandinavian%20Construction/cert_20180129_00003_001.jpg',
+    ],
   },
   statrem: {
     $key: 'statrem',
