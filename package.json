@@ -26,7 +26,6 @@
     "gatsby": "^1.9.270",
     "gatsby-link": "^1.6.44",
     "gatsby-plugin-google-analytics": "^1.0.31",
-    "gatsby-plugin-google-fonts": "^0.0.4",
     "gatsby-plugin-netlify-cms": "^2.0.1",
     "gatsby-plugin-react-helmet": "^2.0.11",
     "gatsby-plugin-sass": "^1.0.26",
@@ -42,7 +41,8 @@
     "react-intl": "^2.4.0",
     "remark-parse": "^5.0.0",
     "styled-components": "^3.3.2",
-    "tachyons-sass": "^4.9.3"
+    "tachyons-sass": "^4.9.3",
+    "webfontloader": "^1.6.28"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.3",

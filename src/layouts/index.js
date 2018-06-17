@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import styled, { ThemeProvider } from 'styled-components';
+import WebFont from 'webfontloader';
 
 import { TranslateProvider } from '../i18n/components';
 import { Header, Footer } from '../components';
@@ -17,6 +18,8 @@ const Container = styled.div`
 const Content = styled.div`
   flex: 1;
 `;
+
+WebFont.load({ google: { families: ['Asap'] } });
 
 function Wrapper({ children, location: { pathname } }) {
   return (

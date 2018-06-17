@@ -4,12 +4,6 @@ module.exports = {
     'gatsby-plugin-styled-components',
     'gatsby-plugin-sass',
     {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [`asap`],
-      },
-    },
-    {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
         trackingId: 'UA-82184813-1',
