@@ -4,7 +4,7 @@ node_js:
   - "9"
 cache:
   yarn: true
-script: yarn qa
+script: yarn qa && GATSBY_DATA_TARGET=esc yarn build
 before_deploy:
   - sudo python -m pip install awscli==1.14.7
 deploy:
