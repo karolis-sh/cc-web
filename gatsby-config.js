@@ -1,4 +1,10 @@
 module.exports = {
+  siteMetadata: {
+    siteUrl:
+      process.env.GATSBY_DATA_TARGET === 'esc'
+        ? 'https://esconstruction.eu'
+        : '',
+  },
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
@@ -28,5 +34,6 @@ module.exports = {
     'gatsby-transformer-remark',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
+    'gatsby-plugin-sitemap',
   ],
 };

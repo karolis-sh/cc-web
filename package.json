@@ -10,7 +10,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "GATSBY_DATA_TARGET=${GATSBY_DATA_TARGET:=esc} gatsby develop",
-    "serve-build": "serve public",
+    "serve-build": "gatsby serve",
     "try-build": "rm -rf public && GATSBY_DATA_TARGET=${GATSBY_DATA_TARGET:=esc} run-s build serve-build",
     "clean": "rm -rf .cache public",
     "lint": "eslint .",
@@ -30,6 +30,7 @@
     "gatsby-plugin-react-helmet": "^2.0.11",
     "gatsby-plugin-sass": "^1.0.26",
     "gatsby-plugin-sharp": "^1.6.47",
+    "gatsby-plugin-sitemap": "^1.2.25",
     "gatsby-plugin-styled-components": "^2.0.11",
     "gatsby-source-filesystem": "^1.5.38",
     "gatsby-transformer-remark": "^1.7.30",
