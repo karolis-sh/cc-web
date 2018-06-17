@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import LazyLoad from 'react-lazyload';
 import Lightbox from 'react-images';
 import styled from 'styled-components';
 
@@ -42,12 +42,13 @@ class Project extends React.Component {
         <ProjectTitle className="ph2 mb1 fs4">{title}</ProjectTitle>
         <ProjectImages>
           {images.map((item, index) => (
-            <ProjectImage
-              key={item.preview.src}
-              onClick={() => this.onOpen(index)}
-              image={item.thumbnail}
-              counterValue={`${index + 1} / ${images.length}`}
-            />
+            <LazyLoad key={item.preview.src} height={ProjectImage.SIZE}>
+              <ProjectImage
+                onClick={() => this.onOpen(index)}
+                image={item.thumbnail}
+                counterValue={`${index + 1} / ${images.length}`}
+              />
+            </LazyLoad>
           ))}
         </ProjectImages>
         <Lightbox

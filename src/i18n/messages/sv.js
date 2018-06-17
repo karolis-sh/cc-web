@@ -11,6 +11,7 @@ export default {
     welcomeText:
       'Vi är en ansvarsfull byggföretag som tillhandahåller tjänster av hög kvalitet för våra kunder. Kvalitet, tid och pris kombination ge bäst resultat i varje projekt vi deltar, lämnar våra kunder och samarbetspartners nöjda med slutresultatet.', // eslint-disable-line max-len
     servicesTitle: 'VÅRA TJÄNSTER',
+    certificates: 'VÅRA CERTIFIKATER',
     procejtsTitle: 'UTVALDA PROJEKT',
   },
   projects: {

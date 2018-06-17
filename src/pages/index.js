@@ -9,8 +9,10 @@ import {
   FeaturedProjects,
   ContentTitle,
   ForwardButton,
+  Certificates,
 } from '../components';
 import { mapProjects } from '../utils';
+import { certificates } from '../data';
 
 function IndexPage({ data }) {
   return (
@@ -40,6 +42,15 @@ function IndexPage({ data }) {
               <FormattedMessage id="home.procejtsTitle" />
             </ContentTitle>
             <FeaturedProjects items={projects} />
+
+            {!!(certificates && certificates.length) && (
+              <React.Fragment>
+                <ContentTitle className="mt4-ns">
+                  <FormattedMessage id="home.certificates" />
+                </ContentTitle>
+                <Certificates />
+              </React.Fragment>
+            )}
 
             <div className="mt4 mt5-ns mb5">
               <div className="tc mb3 fs2">

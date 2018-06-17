@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import LazyLoad from 'react-lazyload';
 import Lightbox from 'react-images';
 import styled from 'styled-components';
 
@@ -47,11 +48,13 @@ class FeaturedProjects extends React.Component {
         <Projects>
           {items.map(item => (
             <div key={item.id}>
-              <ProjectImage
-                image={item.images[0].thumbnail}
-                onClick={() => this.onOpen(item.id)}
-                counterValue={`1 / ${item.images.length}`}
-              />
+              <LazyLoad height={ProjectImage.SIZE}>
+                <ProjectImage
+                  image={item.images[0].thumbnail}
+                  onClick={() => this.onOpen(item.id)}
+                  counterValue={`1 / ${item.images.length}`}
+                />
+              </LazyLoad>
               <div className="mh2 mb1 fs1 b">{item.title}</div>
             </div>
           ))}
