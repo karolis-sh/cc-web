@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
+const SIZE = 220;
+
 const Image = styled.div`
   position: relative;
   margin: 10px;
@@ -12,8 +14,8 @@ const Image = styled.div`
   overflow: hidden;
 
   > img {
-    height: 220px;
-    width: 220px;
+    height: ${SIZE}px;
+    width: ${SIZE}px;
   }
 
   > .counter {
@@ -44,5 +46,7 @@ ProjectImage.propTypes = {
   }).isRequired,
   counterValue: PropTypes.string.isRequired,
 };
+
+ProjectImage.SIZE = SIZE;
 
 export default ProjectImage;

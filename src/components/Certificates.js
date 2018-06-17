@@ -1,6 +1,7 @@
 import React from 'react';
 import Lightbox from 'react-images';
 import styled from 'styled-components';
+import LazyLoad from 'react-lazyload';
 
 import { certificates } from '../data';
 
@@ -32,13 +33,14 @@ class Certificates extends React.Component {
       <React.Fragment>
         <div className="pt2 flex justify-center">
           {certificates.map((item, index) => (
-            <Img
-              key={item}
-              src={`${baseUri + thumbModification + item}`}
-              onClick={() => this.onOpen(index)}
-              alt="certificate"
-              className="mh2"
-            />
+            <LazyLoad key={item}>
+              <Img
+                src={`${baseUri + thumbModification + item}`}
+                onClick={() => this.onOpen(index)}
+                alt="certificate"
+                className="mh2"
+              />
+            </LazyLoad>
           ))}
         </div>
         <Lightbox
