@@ -35,7 +35,7 @@ fi
 echo "AWS_USER = $AWS_USER"
 
 # Build artifacts
-GATSBY_DATA_TARGET=$GATSBY_DATA_TARGET yarn build
+NODE_ENV=production GATSBY_DATA_TARGET=$GATSBY_DATA_TARGET yarn build
 
 # Sync s3
 printf "${C_DARK_GRAY}"
