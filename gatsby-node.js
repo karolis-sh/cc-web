@@ -40,8 +40,8 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
     case 'build-javascript':
       config.merge({
         output: {
-          filename: `${prefix}${timestamp}-[name]-[chunkhash].css`,
-          chunkFilename: `${prefix}${timestamp}-[name]-[chunkhash].css`,
+          filename: `${prefix}${timestamp}-[name]-[chunkhash].js`,
+          chunkFilename: `${prefix}${timestamp}-[name]-[chunkhash].js`,
         },
       });
       break;
