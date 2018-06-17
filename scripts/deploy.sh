@@ -40,23 +40,17 @@ GATSBY_DATA_TARGET=$GATSBY_DATA_TARGET yarn build
 # Sync s3
 printf "${C_DARK_GRAY}"
 aws s3 rm $BUCKET --recursive --region $BUCKET_REGION
-aws s3 cp $BUILD_DIR/index.html $BUCKET/index.html \
-  --content-type "text/html; charset=utf-8" \
-  --region $BUCKET_REGION --acl $BUCKET_ACL --cache-control "$NO_CACHE"
-aws s3 cp $BUILD_DIR $BUCKET \
-  --exclude "*" \
-  --include "*.js" \
-  --include "*.js.map" \
-  --content-type "text/javascript; charset=utf-8" \
-  --recursive --region $BUCKET_REGION --acl $BUCKET_ACL --cache-control "$ONE_MONTH_CACHE"
-aws s3 cp $BUILD_DIR/static $BUCKET/static \
-  --recursive --region $BUCKET_REGION --acl $BUCKET_ACL --cache-control "$ONE_MONTH_CACHE"
 aws s3 cp $BUILD_DIR $BUCKET \
   --include "*" \
-  --exclude "index.html" \
   --exclude "static/*" \
-  --exclude "*.js" --exclude "*.js.map" \
-  --recursive --region $BUCKET_REGION --acl $BUCKET_ACL --cache-control "$ONE_DAY_CACHE"
+  --recursive --region $BUCKET_REGION --acl $BUCKET_ACL --cache-control "$NO_CACHE"
+aws s3 cp $BUILD_DIR/static $BUCKET/static \
+  --recursive --region $BUCKET_REGION --acl $BUCKET_ACL --cache-control "$STATIC_CACHE"
+aws s3 cp $BUILD_DIR $BUCKET \
+  --exclude "*" \
+  --include "__static-*" \
+  --exclude "static/*" \
+  --recursive --region $BUCKET_REGION --acl $BUCKET_ACL --cache-control "$ONE_MONTH_CACHE"
 
 # Invalidate cloudfront
 aws configure set preview.cloudfront true

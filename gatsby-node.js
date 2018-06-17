@@ -35,20 +35,21 @@ exports.onCreateNode = ({ node, boundActionCreators }) => {
 
 exports.modifyWebpackConfig = ({ config, stage }) => {
   const timestamp = Date.now();
+  const prefix = '__static-';
   switch (stage) {
     case 'build-javascript':
       config.merge({
         output: {
-          filename: `_${timestamp}-[name]-[chunkhash].css`,
-          chunkFilename: `_${timestamp}-[name]-[chunkhash].css`,
+          filename: `${prefix}${timestamp}-[name]-[chunkhash].css`,
+          chunkFilename: `${prefix}${timestamp}-[name]-[chunkhash].css`,
         },
       });
       break;
     case 'build-css':
       config.merge({
         output: {
-          filename: `_${timestamp}-[name]-[chunkhash].css`,
-          chunkFilename: `_${timestamp}-[name]-[chunkhash].css`,
+          filename: `${prefix}${timestamp}-[name]-[chunkhash].css`,
+          chunkFilename: `${prefix}${timestamp}-[name]-[chunkhash].css`,
         },
       });
       break;
