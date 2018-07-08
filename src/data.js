@@ -42,6 +42,9 @@ const data = {
     urlName: 'statrem.eu',
     startYear: 2016,
     companyName: 'Statrem',
+    metaTitle: 'Statrem',
+    metaDescription:
+      'Statrem is a construction company. We specialize in services such as Design/Build, Renovations and Construction Management.',
   },
 };
 
