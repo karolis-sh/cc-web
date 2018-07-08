@@ -28,6 +28,7 @@
     "gatsby-plugin-google-analytics": "^1.0.31",
     "gatsby-plugin-netlify-cms": "^2.0.1",
     "gatsby-plugin-react-helmet": "^2.0.11",
+    "gatsby-plugin-robots-txt": "^1.1.0",
     "gatsby-plugin-sass": "^1.0.26",
     "gatsby-plugin-sharp": "^1.6.47",
     "gatsby-plugin-sitemap": "^1.2.25",
