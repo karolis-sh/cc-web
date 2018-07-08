@@ -22,9 +22,18 @@ ONE_WEEK_CACHE="public, max-age=604800"
 ONE_MONTH_CACHE="public, max-age=2628000"
 ONE_YEAR_CACHE="public, max-age=31536000"
 
+# ESC
 ESC_TEST_BUCKET=s3://test.esconstruction.eu
 ESC_TEST_CLOUDFRONT_ID=E1PAQ19AWKDBS7
 ESC_TEST_URL=https://test.esconstruction.eu
 ESC_PROD_BUCKET=s3://esconstruction.eu
 ESC_PROD_CLOUDFRONT_ID=E26XV9XZP5F4KB
 ESC_PROD_URL=https://esconstruction.eu
+
+# Statrem
+STATREM_TEST_BUCKET=s3://test.statrem.eu
+STATREM_TEST_CLOUDFRONT_ID=E1W0EFNC7TMVGI
+STATREM_TEST_URL=https://test.statrem.eu
+STATREM_PROD_BUCKET=s3://statrem.eu
+STATREM_PROD_CLOUDFRONT_ID=EPXLS9GSIKBD9
+STATREM_PROD_URL=https://statrem.eu
