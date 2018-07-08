@@ -1,9 +1,17 @@
+const config = {
+  esc: {
+    siteUrl: 'https://esconstruction.eu',
+    gaTrackingId: 'UA-82184813-1',
+  },
+  statrem: {
+    siteUrl: 'https://statrem.eu',
+    gaTrackingId: 'UA-121319197-1',
+  },
+}[process.env.GATSBY_DATA_TARGET];
+
 module.exports = {
   siteMetadata: {
-    siteUrl:
-      process.env.GATSBY_DATA_TARGET === 'esc'
-        ? 'https://esconstruction.eu'
-        : '',
+    siteUrl: config.siteUrl,
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -12,7 +20,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: 'UA-82184813-1',
+        trackingId: config.gaTrackingId,
         anonymize: true,
       },
     },

@@ -15,6 +15,16 @@ elif [ "$1" = "esc_prod" ]; then
   BUCKET=$ESC_PROD_BUCKET
   CLOUDFRONT_ID=$ESC_PROD_CLOUDFRONT_ID
   URL=$ESC_PROD_URL
+elif [ "$1" = "statrem_test" ]; then
+  GATSBY_DATA_TARGET=statrem
+  BUCKET=$STATREM_TEST_BUCKET
+  CLOUDFRONT_ID=$STATREM_TEST_CLOUDFRONT_ID
+  URL=$STATREM_TEST_URL
+elif [ "$1" = "statrem_prod" ]; then
+  GATSBY_DATA_TARGET=statrem
+  BUCKET=$STATREM_PROD_BUCKET
+  CLOUDFRONT_ID=$STATREM_PROD_CLOUDFRONT_ID
+  URL=$STATREM_PROD_URL
 else
   echo "Invalid deploy target provided - ${C_RED}${1}${C_DEFAULT}"
   exit 1
