@@ -1,3 +1,4 @@
+const rootDir = 'public';
 const config = {
   esc: {
     siteUrl: 'https://esconstruction.eu',
@@ -42,6 +43,20 @@ module.exports = {
     'gatsby-transformer-remark',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        staticFileGlobs: [
+          `${rootDir}/**/*.{woff2}`,
+          `${rootDir}/__static-commons-*js`,
+          `${rootDir}/__static-app-*js`,
+          `${rootDir}/index.html`,
+          `${rootDir}/manifest.json`,
+          `${rootDir}/manifest.webmanifest`,
+          `${rootDir}/offline-plugin-app-shell-fallback/index.html`,
+        ],
+      },
+    },
     'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-plugin-robots-txt',
