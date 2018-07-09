@@ -15,19 +15,21 @@ const Projects = styled.div`
 class FeaturedProjects extends React.Component {
   state = { isOpen: false, selectedProject: undefined, currentImage: 0 };
 
-  onClose = () =>
+  onClose = () => {
     this.setState({
       isOpen: false,
       selectedProject: undefined,
       currentImage: 0,
     });
+  };
 
-  onOpen = project =>
+  onOpen = project => {
     this.setState({
       isOpen: true,
       selectedProject: project,
       currentImage: 0,
     });
+  };
 
   onChangeCurrentImage = index => {
     const { selectedProject } = this.state;
@@ -59,20 +61,18 @@ class FeaturedProjects extends React.Component {
             </div>
           ))}
         </Projects>
-        <Lightbox
-          isOpen={isOpen}
-          images={
-            selectedProject != null
-              ? items
-                  .find(item => item.id === selectedProject)
-                  .images.map(item => ({ src: item.preview.src }))
-              : []
-          }
-          currentImage={currentImage}
-          onClose={this.onClose}
-          onClickNext={() => this.onChangeCurrentImage(currentImage + 1)}
-          onClickPrev={() => this.onChangeCurrentImage(currentImage - 1)}
-        />
+        {selectedProject && (
+          <Lightbox
+            isOpen={isOpen}
+            images={items
+              .find(item => item.id === selectedProject)
+              .images.map(item => ({ src: item.preview.src }))}
+            currentImage={currentImage}
+            onClose={this.onClose}
+            onClickNext={() => this.onChangeCurrentImage(currentImage + 1)}
+            onClickPrev={() => this.onChangeCurrentImage(currentImage - 1)}
+          />
+        )}
       </div>
     );
   }
