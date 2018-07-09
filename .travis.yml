@@ -4,6 +4,9 @@ node_js:
   - "9"
 cache:
   yarn: true
+before_install: yarn global add greenkeeper-lockfile@1
+before_script: greenkeeper-lockfile-update
+after_script: greenkeeper-lockfile-upload
 script: yarn qa && GATSBY_DATA_TARGET=esc yarn build
 before_deploy:
   - sudo python -m pip install awscli==1.14.7
