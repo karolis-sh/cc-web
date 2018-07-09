@@ -19,7 +19,7 @@ const Wrapper = styled.div`
   }
 
   .bm-burger-bars {
-    background: ${props => props.theme.color.gray2};
+    background: ${({ theme }) => theme.color.gray2};
   }
 
   .bm-menu-wrap {
@@ -31,7 +31,7 @@ const Wrapper = styled.div`
   }
 
   .bm-menu {
-    background: ${props => props.theme.color.gray3};
+    background: ${({ theme }) => theme.color.gray3};
   }
 
   .bm-overlay {
@@ -51,7 +51,7 @@ const StyledLink = styled(Link)`
   text-decoration: none;
 
   &:hover {
-    color: ${props => props.theme.color.accent1};
+    color: ${({ theme }) => theme.color.accent1};
   }
 `;
 

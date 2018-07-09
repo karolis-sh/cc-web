@@ -43,7 +43,7 @@ const HeaderWrapper = styled.header`
 `;
 
 const Brand = styled(Link)`
-  color: ${props => props.theme.color.black1};
+  color: ${({ theme }) => theme.color.black1};
   text-decoration: none;
 `;
 
@@ -62,12 +62,12 @@ const NotSmallNav = styled.div`
 `;
 
 const NavLink = styled(Link)`
-  color: ${props => props.theme.color.black1};
+  color: ${({ theme }) => theme.color.black1};
   text-decoration: none;
 
   &.active {
     color: white;
-    background: ${props => props.theme.color.gray3};
+    background: ${({ theme }) => theme.color.gray3};
   }
 `;
 

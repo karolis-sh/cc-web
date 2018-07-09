@@ -3,7 +3,7 @@ import Lightbox from 'react-images';
 import styled from 'styled-components';
 import LazyLoad from 'react-lazyload';
 
-import { certificates } from '../data';
+import data from '../data';
 
 const baseUri = 'https://res.cloudinary.com/buzzard/image/upload/';
 const thumbModification = 'c_thumb,w_200,g_face/';
@@ -21,7 +21,7 @@ class Certificates extends React.Component {
   onOpen = index => this.setState({ open: true, currentImage: index });
 
   onChangeCurrentImage = index => {
-    if (index < certificates.length && index > -1) {
+    if (index < data.certificates.length && index > -1) {
       this.setState({ currentImage: index });
     }
   };
@@ -32,7 +32,7 @@ class Certificates extends React.Component {
     return (
       <React.Fragment>
         <div className="pt2 flex justify-center">
-          {certificates.map((item, index) => (
+          {data.certificates.map((item, index) => (
             <LazyLoad key={item}>
               <Img
                 src={`${baseUri + thumbModification + item}`}
@@ -45,7 +45,7 @@ class Certificates extends React.Component {
         </div>
         <Lightbox
           isOpen={open}
-          images={certificates.map(item => ({ src: `${baseUri + item}` }))}
+          images={data.certificates.map(item => ({ src: `${baseUri + item}` }))}
           currentImage={currentImage}
           onClose={this.onClose}
           onClickNext={() => this.onChangeCurrentImage(currentImage + 1)}

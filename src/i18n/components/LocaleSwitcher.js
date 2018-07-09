@@ -3,9 +3,11 @@ import PropTypes from 'prop-types';
 
 class LocaleSwitcher extends React.Component {
   render() {
-    return this.props.render({
-      locale: this.context.getLocale(),
-      setLocale: this.context.setLocale,
+    const { render } = this.props;
+    const { getLocale, setLocale } = this.context;
+    return render({
+      locale: getLocale(),
+      setLocale,
     });
   }
 }

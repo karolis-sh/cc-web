@@ -3,15 +3,15 @@ import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
 
 import data from '../data';
-import { FAIcon } from './';
+import FAIcon from './FAIcon';
 
 const Container = styled.footer`
   background: #222;
-  color: ${props => props.theme.color.gray4};
+  color: ${({ theme }) => theme.color.gray4};
 `;
 
 const Link = styled.a`
-  color: ${props => props.theme.color.gray4};
+  color: ${({ theme }) => theme.color.gray4};
   text-decoration: none;
 
   &:hover {

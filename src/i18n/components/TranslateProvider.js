@@ -14,11 +14,12 @@ class TranslateProvider extends React.Component {
   }
 
   getChildContext() {
+    const { locale } = this.state;
     return {
-      getLocale: () => this.state.locale,
-      setLocale: locale => {
-        this.setState({ locale });
-        setLocale(locale);
+      getLocale: () => locale,
+      setLocale: newLocale => {
+        this.setState({ locale: newLocale });
+        setLocale(newLocale);
       },
     };
   }

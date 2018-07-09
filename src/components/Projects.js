@@ -4,7 +4,7 @@ import LazyLoad from 'react-lazyload';
 import Lightbox from 'react-images';
 import styled from 'styled-components';
 
-import { ProjectImage } from './';
+import ProjectImage from './ProjectImage';
 
 const ProjectTitle = styled.h1`
   border-bottom: 2px solid black;
