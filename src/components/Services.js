@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import { media } from '../style';
-import { FAIcon } from './';
+import FAIcon from './FAIcon';
 
 const Wrapper = styled.div`
   display: flex;

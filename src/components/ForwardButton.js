@@ -4,11 +4,11 @@ import Link from 'gatsby-link';
 import styled from 'styled-components';
 import cx from 'classnames';
 
-import { FAIcon } from './';
+import FAIcon from './FAIcon';
 
 const Wrapper = styled(Link)`
   display: inline-block;
-  background-color: ${props => props.theme.color.gray2};
+  background-color: ${({ theme }) => theme.color.gray2};
   text-decoration: none;
   border-radius: 2px;
 

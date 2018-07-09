@@ -3,8 +3,10 @@ import PropTypes from 'prop-types';
 
 class CurrentLocale extends React.Component {
   render() {
-    return this.props.render({
-      locale: this.context.getLocale(),
+    const { render } = this.props;
+    const { getLocale } = this.context;
+    return render({
+      locale: getLocale(),
     });
   }
 }

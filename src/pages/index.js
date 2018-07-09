@@ -12,16 +12,16 @@ import {
   Certificates,
 } from '../components';
 import { mapProjects } from '../utils';
-import { certificates } from '../data';
+import data from '../data';
 
-function IndexPage({ data }) {
+function IndexPage({ data: pageData }) {
   return (
     <CurrentLocale
       render={({ locale }) => {
-        const services = data.services.edges.map(item => ({
+        const services = pageData.services.edges.map(item => ({
           title: item.node.frontmatter[`title_${locale}`],
         }));
-        const projects = mapProjects(data.projects, locale);
+        const projects = mapProjects(pageData.projects, locale);
         return (
           <div className="mh2">
             <div className="dn-ns">
@@ -43,7 +43,7 @@ function IndexPage({ data }) {
             </ContentTitle>
             <FeaturedProjects items={projects} />
 
-            {!!(certificates && certificates.length) && (
+            {!!(data.certificates && data.certificates.length) && (
               <React.Fragment>
                 <ContentTitle className="mt4-ns">
                   <FormattedMessage id="home.certificates" />
