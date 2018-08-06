@@ -48,7 +48,7 @@
     "tachyons-sass": "^4.9.3"
   },
   "devDependencies": {
-    "@k.sh/eslint-config": "1.1.0",
+    "@k.sh/eslint-config": "1.2.0",
     "babel-eslint": "^8.2.5",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "cz-conventional-changelog": "^2.1.0",
