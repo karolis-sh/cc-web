@@ -17,4 +17,3 @@ images:
   - enabled: true
     image: /images/uploads/sauna_house-floor_2_3.jpg
 ---
-

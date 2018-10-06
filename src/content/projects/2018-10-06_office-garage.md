@@ -5,6 +5,12 @@ order: 101
 featured: true
 images:
   - enabled: true
+    image: /images/uploads/office-garage-outside-0.jpeg
+  - enabled: true
+    image: /images/uploads/office-garage-outside-1.jpeg
+  - enabled: true
+    image: /images/uploads/office-garage-outside-2.jpeg
+  - enabled: true
     image: /images/uploads/office-garage_garage-1.jpeg
   - enabled: true
     image: /images/uploads/office-garage_top-1.jpeg

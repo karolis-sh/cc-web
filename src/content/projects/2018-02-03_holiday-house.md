@@ -1,9 +1,11 @@
 ---
 title: Holiday house
 title_sv: Semesterhus
-order: 8
+order: 90
 featured: true
 images:
+  - enabled: true
+    image: /images/uploads/red_house-front-1.jpg
   - enabled: true
     image: /images/uploads/white_cabin-front_left.jpg
   - enabled: true
