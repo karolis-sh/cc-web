@@ -1,4 +1,4 @@
-import { injectGlobal } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 import 'font-awesome/css/font-awesome.css';
 
 import media from './media';
@@ -25,7 +25,7 @@ const theme = {
 };
 
 // eslint-disable-next-line no-unused-expressions
-injectGlobal`
+const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     font-family: "Asap", "Helvetica", -apple-system, BlinkMacSystemFont,
@@ -89,4 +89,4 @@ injectGlobal`
   }
 `;
 
-export { theme, media };
+export { theme, media, GlobalStyle };

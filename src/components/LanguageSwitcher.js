@@ -15,8 +15,7 @@ const Flag = styled.div`
   width: 24px;
   height: 16px;
   border: 1px solid black;
-  background: url('/images/flags/${({ language }) =>
-    language}.png') no-repeat center;
+  background: url('/images/flags/${({ language }) => language}.png') no-repeat center;
   cursor: pointer;
 
   ${media.notSmall`
@@ -29,16 +28,8 @@ function LanguageSwitcher() {
     <LocaleSwitcher
       render={({ setLocale }) => (
         <Wrapper>
-          <Flag
-            language="en"
-            className="mv2 ml2"
-            onClick={() => setLocale('en')}
-          />
-          <Flag
-            language="sv"
-            className="mv2 mh2"
-            onClick={() => setLocale('sv')}
-          />
+          <Flag language="en" className="mv2 ml2" onClick={() => setLocale('en')} />
+          <Flag language="sv" className="mv2 mh2" onClick={() => setLocale('sv')} />
         </Wrapper>
       )}
     />

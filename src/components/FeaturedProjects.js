@@ -34,10 +34,7 @@ class FeaturedProjects extends React.Component {
   onChangeCurrentImage = index => {
     const { selectedProject } = this.state;
     const { items } = this.props;
-    if (
-      index < items.find(item => item.id === selectedProject).images.length &&
-      index > -1
-    ) {
+    if (index < items.find(item => item.id === selectedProject).images.length && index > -1) {
       this.setState({ currentImage: index });
     }
   };

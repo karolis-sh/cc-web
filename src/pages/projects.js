@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-import graphql from 'graphql';
+import { graphql } from 'gatsby';
 
 import { CurrentLocale } from '../i18n/components';
 import { ContentTitle, ForwardButton, Projects } from '../components';
@@ -37,13 +37,15 @@ function ProjectsPage({ data }) {
 }
 
 ProjectsPage.propTypes = {
-  data: PropTypes.shape({}).isRequired,
+  data: PropTypes.shape({
+    projects: PropTypes.shape({}).isRequired,
+  }).isRequired,
 };
 
 export default ProjectsPage;
 
-export const pageQuery = graphql`
-  query ProjectsPage {
+export const query = graphql`
+  {
     projects: allNetlifyContent(
       filter: { contentType: { eq: "projects" } }
       sort: { fields: [frontmatter___order], order: DESC }

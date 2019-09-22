@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { IntlProvider, addLocaleData } from 'react-intl';
 
+import LocaleContext from './LocaleContext';
 import { DEFAULT_LOCALE, LOCALE_DATA } from '../constants';
 import { getLocale, setLocale } from '../utils';
 import messages from '../messages';
@@ -13,17 +14,6 @@ class TranslateProvider extends React.Component {
     addLocaleData(LOCALE_DATA);
   }
 
-  getChildContext() {
-    const { locale } = this.state;
-    return {
-      getLocale: () => locale,
-      setLocale: newLocale => {
-        this.setState({ locale: newLocale });
-        setLocale(newLocale);
-      },
-    };
-  }
-
   componentDidMount() {
     // eslint-disable-next-line react/no-did-mount-set-state
     this.setState({ locale: getLocale() });
@@ -33,25 +23,30 @@ class TranslateProvider extends React.Component {
     const { children } = this.props;
     const { locale } = this.state;
     return (
-      <IntlProvider
-        key={locale}
-        locale={locale}
-        messages={messages[locale]}
-        defaultLocale={DEFAULT_LOCALE}
+      <LocaleContext.Provider
+        value={{
+          getLocale: () => locale,
+          setLocale: newLocale => {
+            this.setState({ locale: newLocale });
+            setLocale(newLocale);
+          },
+        }}
       >
-        {children}
-      </IntlProvider>
+        <IntlProvider
+          key={locale}
+          locale={locale}
+          messages={messages[locale]}
+          defaultLocale={DEFAULT_LOCALE}
+        >
+          {children}
+        </IntlProvider>
+      </LocaleContext.Provider>
     );
   }
 }
 
 TranslateProvider.propTypes = {
   children: PropTypes.node.isRequired,
-};
-
-TranslateProvider.childContextTypes = {
-  getLocale: PropTypes.func.isRequired,
-  setLocale: PropTypes.func.isRequired,
 };
 
 export default TranslateProvider;

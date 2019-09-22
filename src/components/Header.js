@@ -94,21 +94,13 @@ function Header({ pathname }) {
               <Brand to="/" className="fs4 b mr3">
                 {data.companyName}
               </Brand>
-              <NavLink exact to="/" className="pa2 b" activeClassName="active">
+              <NavLink to="/" className="pa2 b" activeClassName="active">
                 <FormattedMessage id="header.nav.home" />
               </NavLink>
-              <NavLink
-                to="/projects"
-                className="pa2 b"
-                activeClassName="active"
-              >
+              <NavLink to="/projects/" className="pa2 b" activeClassName="active">
                 <FormattedMessage id="header.nav.projects" />
               </NavLink>
-              <NavLink
-                to="/contacts"
-                className="pa2 b"
-                activeClassName="active"
-              >
+              <NavLink to="/contacts/" className="pa2 b" activeClassName="active">
                 <FormattedMessage id="header.nav.contacts" />
               </NavLink>
             </NotSmallNav>

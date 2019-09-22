@@ -3,11 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 
 const FAIcon = ({ type, className, ...props }) => (
-  <i
-    className={cx('fa', `fa-${type}`, className)}
-    aria-hidden="true"
-    {...props}
-  />
+  <i className={cx('fa', `fa-${type}`, className)} aria-hidden="true" {...props} />
 );
 
 FAIcon.propTypes = {

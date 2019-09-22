@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import styled from 'styled-components';
-import graphql from 'graphql';
+import { graphql } from 'gatsby';
 
 import contentData from '../data';
 import { media } from '../style';
@@ -25,16 +25,10 @@ const Link = styled.a`
 `;
 
 function ContactsPage({ data }) {
-  const contacts = data.contacts.edges.map(
-    ({
-      node: {
-        frontmatter: { title, phone },
-      },
-    }) => ({
-      title,
-      phone,
-    })
-  );
+  const contacts = data.contacts.edges.map(({ node: { frontmatter: { title, phone } } }) => ({
+    title,
+    phone,
+  }));
 
   return (
     <div className="mh2">
@@ -47,17 +41,12 @@ function ContactsPage({ data }) {
         <ul>
           {contacts.map(item => (
             <li key={item.title}>
-              <Link href={`tel:${item.phone.replace(' ', '')}`}>
-                {item.phone}
-              </Link>{' '}
-              - {item.title}
+              <Link href={`tel:${item.phone.replace(' ', '')}`}>{item.phone}</Link> - {item.title}
             </li>
           ))}
           {contentData.email && (
             <li>
-              <Link href={`mailto:${contentData.email}`}>
-                {contentData.email}
-              </Link>
+              <Link href={`mailto:${contentData.email}`}>{contentData.email}</Link>
             </li>
           )}
         </ul>
@@ -67,13 +56,17 @@ function ContactsPage({ data }) {
 }
 
 ContactsPage.propTypes = {
-  data: PropTypes.shape({}).isRequired,
+  data: PropTypes.shape({
+    contacts: PropTypes.shape({
+      edges: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+    }).isRequired,
+  }).isRequired,
 };
 
 export default ContactsPage;
 
-export const pageQuery = graphql`
-  query ContactsPage {
+export const query = graphql`
+  {
     contacts: allNetlifyContent(filter: { contentType: { eq: "contacts" } }) {
       edges {
         node {

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import graphql from 'graphql';
+import { graphql } from 'gatsby';
 import { FormattedMessage } from 'react-intl';
 
 import { CurrentLocale } from '../i18n/components';
@@ -12,7 +12,7 @@ import {
   Certificates,
 } from '../components';
 import { mapProjects } from '../utils';
-import data from '../data';
+import staticData from '../data';
 
 function IndexPage({ data: pageData }) {
   return (
@@ -43,7 +43,7 @@ function IndexPage({ data: pageData }) {
             </ContentTitle>
             <FeaturedProjects items={projects} />
 
-            {!!(data.certificates && data.certificates.length) && (
+            {!!(staticData.certificates && staticData.certificates.length) && (
               <React.Fragment>
                 <ContentTitle className="mt4-ns">
                   <FormattedMessage id="home.certificates" />
@@ -76,8 +76,8 @@ IndexPage.propTypes = {
 
 export default IndexPage;
 
-export const pageQuery = graphql`
-  query IndexPage {
+export const query = graphql`
+  {
     services: allNetlifyContent(
       filter: { contentType: { eq: "services" } }
       sort: { fields: [frontmatter___order], order: DESC }
@@ -92,12 +92,8 @@ export const pageQuery = graphql`
         }
       }
     }
-
     projects: allNetlifyContent(
-      filter: {
-        contentType: { eq: "projects" }
-        frontmatter: { featured: { eq: true } }
-      }
+      filter: { contentType: { eq: "projects" }, frontmatter: { featured: { eq: true } } }
       sort: { fields: [frontmatter___order], order: DESC }
     ) {
       edges {

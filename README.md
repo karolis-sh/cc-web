@@ -1,4 +1,4 @@
-# 🕸️ [![Build Status](https://travis-ci.org/buz-zard/cc-web.svg?branch=master)](https://travis-ci.org/buz-zard/cc-web) [![Greenkeeper badge](https://badges.greenkeeper.io/buz-zard/cc-web.svg)](https://greenkeeper.io/)
+# 🕸️
 
 ESC / Statrem landing pages.
 

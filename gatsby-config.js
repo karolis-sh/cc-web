@@ -1,12 +1,18 @@
-const rootDir = 'public';
+const target = process.env.GATSBY_DATA_TARGET;
+if (['esc', 'statrem'].indexOf(target) === -1) {
+  throw new Error(`Invalid GATSBY_DATA_TARGET - ${JSON.stringify(target)}`);
+}
+
 const config = {
   esc: {
     siteUrl: 'https://esconstruction.eu',
     gaTrackingId: 'UA-82184813-1',
+    s3bucketName: 'esconstruction.eu',
   },
   statrem: {
     siteUrl: 'https://statrem.eu',
     gaTrackingId: 'UA-121319197-1',
+    s3bucketName: 'statrem.eu',
   },
 }[process.env.GATSBY_DATA_TARGET];
 
@@ -26,7 +32,7 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/content`,
         name: 'content',
@@ -43,27 +49,20 @@ module.exports = {
     'gatsby-transformer-remark',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
+    'gatsby-plugin-remove-serviceworker',
+    'gatsby-plugin-layout',
     {
-      resolve: `gatsby-plugin-offline`,
+      resolve: 'gatsby-plugin-web-font-loader',
       options: {
-        staticFileGlobs: [
-          `${rootDir}/**/*.{woff2}`,
-          `${rootDir}/__static-commons-*js`,
-          `${rootDir}/__static-app-*js`,
-          `${rootDir}/index.html`,
-          `${rootDir}/manifest.json`,
-          `${rootDir}/manifest.webmanifest`,
-          `${rootDir}/offline-plugin-app-shell-fallback/index.html`,
-        ],
+        google: { families: ['Asap'] },
       },
     },
-    'gatsby-plugin-sitemap',
+    'gatsby-plugin-advanced-sitemap',
+    'gatsby-plugin-robots-txt',
     {
-      resolve: 'gatsby-plugin-robots-txt',
+      resolve: 'gatsby-plugin-s3',
       options: {
-        host: config.siteUrl,
-        sitemap: `${config.siteUrl}/sitemap.xml`,
-        policy: [{ userAgent: '*', allow: '/' }],
+        bucketName: 'reactiify.com',
       },
     },
   ],
