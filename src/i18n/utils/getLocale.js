@@ -1,8 +1,4 @@
-import {
-  DEFAULT_LOCALE,
-  AVAILABLE_LOCALES,
-  LOCAL_STORAGE_KEY,
-} from '../constants';
+import { DEFAULT_LOCALE, AVAILABLE_LOCALES, LOCAL_STORAGE_KEY } from '../constants';
 
 const getLocale = () => {
   if (typeof navigator !== 'undefined' && typeof localStorage !== 'undefined') {

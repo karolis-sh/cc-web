@@ -70,7 +70,13 @@ Project.propTypes = {
 };
 
 function Projects({ items }) {
-  return <div>{items.map(item => <Project key={item.id} {...item} />)}</div>;
+  return (
+    <div>
+      {items.map(item => (
+        <Project key={item.id} {...item} />
+      ))}
+    </div>
+  );
 }
 
 Projects.propTypes = {

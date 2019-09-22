@@ -12,7 +12,7 @@ import {
   Certificates,
 } from '../components';
 import { mapProjects } from '../utils';
-import data from '../data';
+import staticData from '../data';
 
 function IndexPage({ data: pageData }) {
   return (
@@ -43,7 +43,7 @@ function IndexPage({ data: pageData }) {
             </ContentTitle>
             <FeaturedProjects items={projects} />
 
-            {!!(data.certificates && data.certificates.length) && (
+            {!!(staticData.certificates && staticData.certificates.length) && (
               <React.Fragment>
                 <ContentTitle className="mt4-ns">
                   <FormattedMessage id="home.certificates" />
@@ -93,10 +93,7 @@ export const query = graphql`
       }
     }
     projects: allNetlifyContent(
-      filter: {
-        contentType: { eq: "projects" }
-        frontmatter: { featured: { eq: true } }
-      }
+      filter: { contentType: { eq: "projects" }, frontmatter: { featured: { eq: true } } }
       sort: { fields: [frontmatter___order], order: DESC }
     ) {
       edges {

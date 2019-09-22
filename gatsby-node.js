@@ -1,11 +1,8 @@
 exports.onCreateNode = ({ node, actions }) => {
-  if (node.internal.type === `MarkdownRemark`) {
+  if (node.internal.type === 'MarkdownRemark') {
     const { createNode } = actions;
 
-    const contentKey = node.fileAbsolutePath.replace(
-      `${__dirname}/src/content/`,
-      ''
-    );
+    const contentKey = node.fileAbsolutePath.replace(`${__dirname}/src/content/`, '');
     const contentType = contentKey.split('/')[0];
     const frontmatter = { ...node.frontmatter };
 
