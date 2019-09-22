@@ -58,7 +58,7 @@ function IndexPage({ data: pageData }) {
               </div>
               <div className="tc">
                 <ForwardButton
-                  url="/contacts"
+                  url="/contacts/"
                   text={<FormattedMessage id="contact.initiationAction" />}
                 />
               </div>

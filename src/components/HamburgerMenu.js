@@ -67,10 +67,10 @@ class HamburgerMenu extends React.Component {
             <StyledLink to="/" className="mb3">
               <FormattedMessage id="header.nav.home" />
             </StyledLink>
-            <StyledLink to="/projects" className="mb3">
+            <StyledLink to="/projects/" className="mb3">
               <FormattedMessage id="header.nav.projects" />
             </StyledLink>
-            <StyledLink to="/contacts">
+            <StyledLink to="/contacts/">
               <FormattedMessage id="header.nav.contacts" />
             </StyledLink>
           </div>

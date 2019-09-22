@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 import data from '../data';
 import FAIcon from './FAIcon';
@@ -10,7 +11,7 @@ const Container = styled.footer`
   color: ${({ theme }) => theme.color.gray4};
 `;
 
-const Link = styled.a`
+const Link = styled(OutboundLink)`
   color: ${({ theme }) => theme.color.gray4};
   text-decoration: none;
 
@@ -27,15 +28,12 @@ function Footer() {
     <Container className="pv4">
       <div className="container ph2">
         <div className="tc">
-          <FAIcon type="copyright" /> {yearPeriod}{' '}
-          <Link href={data.url} target="_blank">
-            {data.urlName}
-          </Link>{' '}
-          - <span className="color-accent-1">{data.companyName}</span>
+          <FAIcon type="copyright" /> {yearPeriod} {data.urlName} -{' '}
+          <span className="color-accent-1">{data.companyName}</span>
         </div>
         <div className="tc mt3">
           <FormattedMessage id="footer.solution" /> -{' '}
-          <Link href="https://karolis.sh/" target="_blank">
+          <Link href="https://karolis.sh/" target="_blank" rel="noopener noreferrer">
             karolis.sh
           </Link>
         </div>
