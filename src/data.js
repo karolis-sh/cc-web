@@ -1,10 +1,5 @@
 import React from 'react';
 
-const target = process.env.GATSBY_DATA_TARGET;
-if (['esc', 'statrem'].indexOf(target) === -1) {
-  throw new Error(`Invalid GATSBY_DATA_TARGET - ${JSON.stringify(target)}`);
-}
-
 const data = {
   esc: {
     $key: 'esc',
@@ -48,4 +43,4 @@ const data = {
   },
 };
 
-export default data[target];
+export default data[process.env.GATSBY_DATA_TARGET];

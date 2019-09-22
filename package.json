@@ -6,13 +6,17 @@
   "scripts": {
     "build": "gatsby build",
     "clean": "rm -rf .cache public",
-    "develop": "GATSBY_DATA_TARGET=${GATSBY_DATA_TARGET:=esc} gatsby develop",
+    "deploy": "gatsby-plugin-s3 deploy",
     "format": "run-p format:*",
     "format:js": "prettier --write '**/*.*'",
     "format:package-json": "sort-package-json",
     "lint": "eslint .",
     "qa": "yarn lint",
+    "release": "run-s release:*",
+    "release:e": "GATSBY_DATA_TARGET=esc run-s clean build deploy",
+    "release:s": "GATSBY_DATA_TARGET=statrem run-s clean build deploy",
     "serve-build": "gatsby serve",
+    "start": "GATSBY_DATA_TARGET=${GATSBY_DATA_TARGET:=esc} gatsby develop",
     "try": "rm -rf public && GATSBY_DATA_TARGET=${GATSBY_DATA_TARGET:=esc} run-s build serve-build"
   },
   "husky": {
@@ -76,6 +80,7 @@
     "gatsby-plugin-advanced-sitemap": "^1.4.4",
     "gatsby-plugin-layout": "^1.1.8",
     "gatsby-plugin-remove-serviceworker": "^1.0.0",
+    "gatsby-plugin-s3": "^0.3.2",
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "husky": "^3.0.5",
     "lint-staged": "^9.2.5",

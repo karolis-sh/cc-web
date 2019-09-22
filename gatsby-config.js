@@ -1,11 +1,18 @@
+const target = process.env.GATSBY_DATA_TARGET;
+if (['esc', 'statrem'].indexOf(target) === -1) {
+  throw new Error(`Invalid GATSBY_DATA_TARGET - ${JSON.stringify(target)}`);
+}
+
 const config = {
   esc: {
     siteUrl: 'https://esconstruction.eu',
     gaTrackingId: 'UA-82184813-1',
+    s3bucketName: 'esconstruction.eu',
   },
   statrem: {
     siteUrl: 'https://statrem.eu',
     gaTrackingId: 'UA-121319197-1',
+    s3bucketName: 'statrem.eu',
   },
 }[process.env.GATSBY_DATA_TARGET];
 
@@ -52,5 +59,11 @@ module.exports = {
     },
     'gatsby-plugin-advanced-sitemap',
     'gatsby-plugin-robots-txt',
+    {
+      resolve: 'gatsby-plugin-s3',
+      options: {
+        bucketName: 'reactiify.com',
+      },
+    },
   ],
 };
