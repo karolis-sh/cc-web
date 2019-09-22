@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-import graphql from 'graphql';
+import { graphql } from 'gatsby';
 
 import { CurrentLocale } from '../i18n/components';
 import { ContentTitle, ForwardButton, Projects } from '../components';
@@ -42,8 +42,8 @@ ProjectsPage.propTypes = {
 
 export default ProjectsPage;
 
-export const pageQuery = graphql`
-  query ProjectsPage {
+export const query = graphql`
+  {
     projects: allNetlifyContent(
       filter: { contentType: { eq: "projects" } }
       sort: { fields: [frontmatter___order], order: DESC }

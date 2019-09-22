@@ -43,14 +43,14 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-plugin-remove-serviceworker',
-    'gatsby-plugin-sitemap',
+    'gatsby-plugin-layout',
     {
-      resolve: 'gatsby-plugin-robots-txt',
+      resolve: 'gatsby-plugin-web-font-loader',
       options: {
-        host: config.siteUrl,
-        sitemap: `${config.siteUrl}/sitemap.xml`,
-        policy: [{ userAgent: '*', allow: '/' }],
+        google: { families: ['Asap'] },
       },
     },
+    'gatsby-plugin-advanced-sitemap',
+    'gatsby-plugin-robots-txt',
   ],
 };

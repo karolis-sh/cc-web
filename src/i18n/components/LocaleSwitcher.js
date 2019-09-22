@@ -1,21 +1,15 @@
-import React from 'react';
+import { useContext } from 'react';
 import PropTypes from 'prop-types';
 
-class LocaleSwitcher extends React.Component {
-  render() {
-    const { render } = this.props;
-    const { getLocale, setLocale } = this.context;
-    return render({
-      locale: getLocale(),
-      setLocale,
-    });
-  }
-}
+import LocaleContext from './LocaleContext';
 
-LocaleSwitcher.contextTypes = {
-  getLocale: PropTypes.func.isRequired,
-  setLocale: PropTypes.func.isRequired,
-};
+function LocaleSwitcher({ render }) {
+  const { getLocale, setLocale } = useContext(LocaleContext);
+  return render({
+    locale: getLocale(),
+    setLocale,
+  });
+}
 
 LocaleSwitcher.propTypes = {
   render: PropTypes.func.isRequired,

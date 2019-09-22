@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import styled from 'styled-components';
-import graphql from 'graphql';
+import { graphql } from 'gatsby';
 
 import contentData from '../data';
 import { media } from '../style';
@@ -72,8 +72,8 @@ ContactsPage.propTypes = {
 
 export default ContactsPage;
 
-export const pageQuery = graphql`
-  query ContactsPage {
+export const query = graphql`
+  {
     contacts: allNetlifyContent(filter: { contentType: { eq: "contacts" } }) {
       edges {
         node {

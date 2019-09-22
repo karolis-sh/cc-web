@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import graphql from 'graphql';
+import { graphql } from 'gatsby';
 import { FormattedMessage } from 'react-intl';
 
 import { CurrentLocale } from '../i18n/components';
@@ -76,8 +76,8 @@ IndexPage.propTypes = {
 
 export default IndexPage;
 
-export const pageQuery = graphql`
-  query IndexPage {
+export const query = graphql`
+  {
     services: allNetlifyContent(
       filter: { contentType: { eq: "services" } }
       sort: { fields: [frontmatter___order], order: DESC }
@@ -92,7 +92,6 @@ export const pageQuery = graphql`
         }
       }
     }
-
     projects: allNetlifyContent(
       filter: {
         contentType: { eq: "projects" }

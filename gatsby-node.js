@@ -1,6 +1,6 @@
-exports.onCreateNode = ({ node, boundActionCreators }) => {
+exports.onCreateNode = ({ node, actions }) => {
   if (node.internal.type === `MarkdownRemark`) {
-    const { createNode } = boundActionCreators;
+    const { createNode } = actions;
 
     const contentKey = node.fileAbsolutePath.replace(
       `${__dirname}/src/content/`,
@@ -31,30 +31,4 @@ exports.onCreateNode = ({ node, boundActionCreators }) => {
       frontmatter,
     });
   }
-};
-
-exports.modifyWebpackConfig = ({ config, stage }) => {
-  const timestamp = Date.now();
-  const prefix = '__static-';
-  switch (stage) {
-    case 'build-javascript':
-      config.merge({
-        output: {
-          filename: `${prefix}-[name]-${timestamp}-[chunkhash].js`,
-          chunkFilename: `${prefix}-[name]-${timestamp}-[chunkhash].js`,
-        },
-      });
-      break;
-    case 'build-css':
-      config.merge({
-        output: {
-          filename: `${prefix}-[name]-${timestamp}-[chunkhash].css`,
-          chunkFilename: `${prefix}-[name]-${timestamp}-[chunkhash].css`,
-        },
-      });
-      break;
-    default:
-      break;
-  }
-  return config;
 };
