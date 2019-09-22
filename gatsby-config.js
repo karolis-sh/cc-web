@@ -62,7 +62,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-s3',
       options: {
-        bucketName: 'reactiify.com',
+        bucketName: config.s3bucketName,
       },
     },
   ],
