@@ -6,6 +6,7 @@ import './index.scss';
 
 const COLORS = {
   orange1: '#D4690C',
+  orange2: '#ff7700',
   black1: '#222',
   gray1: '#222222',
   gray2: '#333333',
@@ -16,6 +17,7 @@ const COLORS = {
 const theme = {
   color: {
     accent1: COLORS.orange1,
+    accent1highlight: COLORS.orange2,
     black1: COLORS.black1,
     gray1: COLORS.gray1,
     gray2: COLORS.gray2,
@@ -82,6 +84,10 @@ const GlobalStyle = createGlobalStyle`
 
   .color-accent-1 {
     color: ${theme.color.accent1};
+  }
+
+  .color-accent-1-highlight {
+    color: ${theme.color.accent1highlight};
   }
 
   .tj {

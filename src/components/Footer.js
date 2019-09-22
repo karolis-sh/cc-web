@@ -29,7 +29,7 @@ function Footer() {
       <div className="container ph2">
         <div className="tc">
           <FAIcon type="copyright" /> {yearPeriod} {data.urlName} -{' '}
-          <span className="color-accent-1">{data.companyName}</span>
+          <span className="color-accent-1-highlight">{data.companyName}</span>
         </div>
         <div className="tc mt3">
           <FormattedMessage id="footer.solution" /> -{' '}
