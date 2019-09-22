@@ -23,6 +23,10 @@ export default {
     initiationAction: 'CONTACT US',
     text: 'Feel free to contact us if you have any questions or business proposals.',
   },
+  404: {
+    notfound: 'Page not found',
+    home: 'HOME',
+  },
   footer: {
     solution: 'Solution by',
   },

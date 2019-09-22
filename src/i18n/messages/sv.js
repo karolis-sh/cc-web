@@ -23,6 +23,10 @@ export default {
     initiationAction: 'KONTAKTA OSS',
     text: 'Tveka inte att kontakta oss om du har några frågor eller förslag.',
   },
+  404: {
+    notfound: 'Sidan hittas inte',
+    home: 'HOME',
+  },
   footer: {
     solution: 'Lösning av',
   },
