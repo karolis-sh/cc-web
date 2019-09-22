@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: buz-zard/cc-web
+  repo: karolis-sh/cc-web
   branch: master
 
 media_folder: static/images/uploads
