@@ -5,7 +5,7 @@ import LazyLoad from 'react-lazyload';
 
 import data from '../data';
 
-const baseUri = 'https://res.cloudinary.com/buzzard/image/upload/';
+const baseUri = 'https://res.cloudinary.com/karolis/image/upload/';
 const thumbModification = 'c_thumb,w_200,g_face/';
 
 const Img = styled.img`

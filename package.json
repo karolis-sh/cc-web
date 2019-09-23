@@ -4,7 +4,7 @@
   "scripts": {
     "build": "gatsby build",
     "clean": "rm -rf .cache public",
-    "deploy": "gatsby-plugin-s3 deploy",
+    "deploy": "gatsby-plugin-s3 deploy -y",
     "format": "run-p format:*",
     "format:js": "prettier --write '**/*.*'",
     "format:package-json": "sort-package-json",
