@@ -16,6 +16,7 @@ export default {
   },
   projects: {
     title: 'PROJEKT',
+    initiationAction: 'ALLA PROJEKT',
   },
   contact: {
     title: 'Kontakter',

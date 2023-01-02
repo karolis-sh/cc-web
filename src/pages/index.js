@@ -43,6 +43,12 @@ function IndexPage({ data: pageData }) {
               <FormattedMessage id="home.procejtsTitle" />
             </ContentTitle>
             <FeaturedProjects items={projects} />
+            <div className="mt4 mb5 tc">
+              <ForwardButton
+                url="/projects/"
+                text={<FormattedMessage id="projects.initiationAction" />}
+              />
+            </div>
 
             {!!(staticData.certificates && staticData.certificates.length) && (
               <React.Fragment>
