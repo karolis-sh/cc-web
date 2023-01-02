@@ -15,9 +15,10 @@ const Wrapper = styled.div`
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+    display: flex;
 
     > div {
-      height: 100%;
+      flex: 1;
       background: linear-gradient(
         to top,
         rgba(255, 255, 255, 1) 0%,
