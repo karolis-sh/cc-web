@@ -48,7 +48,7 @@ export const query = graphql`
   {
     projects: allNetlifyContent(
       filter: { contentType: { eq: "projects" } }
-      sort: { fields: [frontmatter___order], order: DESC }
+      sort: { frontmatter: { order: DESC } }
     ) {
       edges {
         node {
@@ -62,10 +62,10 @@ export const query = graphql`
               enabled
               image {
                 transform: childImageSharp {
-                  preview: resolutions(width: 1200, quality: 85) {
+                  preview: resize(width: 1200, quality: 85) {
                     src
                   }
-                  thumbnail: resolutions(width: 220, height: 220) {
+                  thumbnail: resize(width: 220, height: 220) {
                     src
                   }
                 }
