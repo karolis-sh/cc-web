@@ -1,5 +1,5 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import styled from 'styled-components';
 
 import { media } from '../style';
@@ -27,7 +27,7 @@ const Box = styled.div`
 function Services({ items }) {
   return (
     <Wrapper>
-      {items.map(item => (
+      {items.map((item) => (
         <Box key={item.title} className="shadow pv2 ph3 mv2">
           <FAIcon type="chevron-right" className="mr3" />
           {item.title}
@@ -41,7 +41,7 @@ Services.propTypes = {
   items: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.string.isRequired,
-    })
+    }),
   ).isRequired,
 };
 

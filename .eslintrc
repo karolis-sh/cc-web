@@ -1,7 +1,0 @@
-{
-  "extends": ["@k.sh/eslint-config"],
-  "parser": "babel-eslint",
-  "env": {
-    "browser": true
-  }
-}

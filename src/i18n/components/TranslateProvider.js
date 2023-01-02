@@ -1,11 +1,11 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import { IntlProvider, addLocaleData } from 'react-intl';
 
-import LocaleContext from './LocaleContext';
 import { DEFAULT_LOCALE, LOCALE_DATA } from '../constants';
-import { getLocale, setLocale } from '../utils';
 import messages from '../messages';
+import { getLocale, setLocale } from '../utils';
+import LocaleContext from './LocaleContext';
 
 class TranslateProvider extends React.Component {
   constructor(props) {
@@ -26,7 +26,7 @@ class TranslateProvider extends React.Component {
       <LocaleContext.Provider
         value={{
           getLocale: () => locale,
-          setLocale: newLocale => {
+          setLocale: (newLocale) => {
             this.setState({ locale: newLocale });
             setLocale(newLocale);
           },

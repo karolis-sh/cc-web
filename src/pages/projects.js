@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { FormattedMessage } from 'react-intl';
 import { graphql } from 'gatsby';
+import PropTypes from 'prop-types';
+import React from 'react';
+import { FormattedMessage } from 'react-intl';
 
-import { CurrentLocale } from '../i18n/components';
 import { ContentTitle, ForwardButton, Projects } from '../components';
+import { CurrentLocale } from '../i18n/components';
 import { mapProjects } from '../utils';
 
 function ProjectsPage({ data }) {

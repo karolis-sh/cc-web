@@ -1,7 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
-import { FormattedMessage } from 'react-intl';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
+import React from 'react';
+import { FormattedMessage } from 'react-intl';
+import styled from 'styled-components';
 
 import data from '../data';
 import FAIcon from './FAIcon';
@@ -33,7 +33,11 @@ function Footer() {
         </div>
         <div className="tc mt3">
           <FormattedMessage id="footer.solution" /> -{' '}
-          <Link href="https://karolis.sh/" target="_blank" rel="noopener noreferrer">
+          <Link
+            href="https://karolis.sh/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             karolis.sh
           </Link>
         </div>

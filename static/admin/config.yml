@@ -12,7 +12,7 @@ collections:
     name: service
     folder: src/content/services
     create: true
-    slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
+    slug: '{{year}}-{{month}}-{{day}}_{{slug}}'
     fields:
       - { label: Title EN, name: title }
       - { label: Title SV, name: title_sv }
@@ -22,7 +22,7 @@ collections:
     name: project
     folder: src/content/projects
     create: true
-    slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
+    slug: '{{year}}-{{month}}-{{day}}_{{slug}}'
     fields:
       - { label: Title EN, name: title }
       - { label: Title SV, name: title_sv }
@@ -39,7 +39,7 @@ collections:
     name: contact
     folder: src/content/contacts
     create: true
-    slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
+    slug: '{{year}}-{{month}}-{{day}}_{{slug}}'
     fields:
       - { label: Title, name: title, required: true }
       - { label: Phone, name: phone }

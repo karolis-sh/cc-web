@@ -1,7 +1,7 @@
-import React from 'react';
 import { Link } from 'gatsby';
-import { FormattedMessage } from 'react-intl';
+import React from 'react';
 import { slide as Menu } from 'react-burger-menu';
+import { FormattedMessage } from 'react-intl';
 import styled from 'styled-components';
 
 import { media } from '../style';

@@ -1,7 +1,0 @@
-**/node_modules
-
-# Project specific
-/.cache/
-
-# Build
-/public

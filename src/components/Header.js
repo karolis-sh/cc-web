@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import { Link, withPrefix } from 'gatsby';
+import PropTypes from 'prop-types';
+import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import styled from 'styled-components';
 
@@ -98,10 +98,18 @@ function Header({ pathname }) {
               <NavLink to="/" className="pa2 b" activeClassName="active">
                 <FormattedMessage id="header.nav.home" />
               </NavLink>
-              <NavLink to="/projects/" className="pa2 b" activeClassName="active">
+              <NavLink
+                to="/projects/"
+                className="pa2 b"
+                activeClassName="active"
+              >
                 <FormattedMessage id="header.nav.projects" />
               </NavLink>
-              <NavLink to="/contacts/" className="pa2 b" activeClassName="active">
+              <NavLink
+                to="/contacts/"
+                className="pa2 b"
+                activeClassName="active"
+              >
                 <FormattedMessage id="header.nav.contacts" />
               </NavLink>
             </NotSmallNav>

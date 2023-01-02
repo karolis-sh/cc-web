@@ -1,7 +1,7 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import LazyLoad from 'react-lazyload';
+import React from 'react';
 import Lightbox from 'react-images';
+import LazyLoad from 'react-lazyload';
 import styled from 'styled-components';
 
 import ProjectImage from './ProjectImage';
@@ -23,7 +23,7 @@ class FeaturedProjects extends React.Component {
     });
   };
 
-  onOpen = project => {
+  onOpen = (project) => {
     this.setState({
       isOpen: true,
       selectedProject: project,
@@ -31,10 +31,13 @@ class FeaturedProjects extends React.Component {
     });
   };
 
-  onChangeCurrentImage = index => {
+  onChangeCurrentImage = (index) => {
     const { selectedProject } = this.state;
     const { items } = this.props;
-    if (index < items.find(item => item.id === selectedProject).images.length && index > -1) {
+    if (
+      index < items.find((item) => item.id === selectedProject).images.length &&
+      index > -1
+    ) {
       this.setState({ currentImage: index });
     }
   };
@@ -45,7 +48,7 @@ class FeaturedProjects extends React.Component {
     return (
       <div>
         <Projects>
-          {items.map(item => (
+          {items.map((item) => (
             <div key={item.id}>
               <LazyLoad height={ProjectImage.SIZE}>
                 <ProjectImage
@@ -62,8 +65,8 @@ class FeaturedProjects extends React.Component {
           <Lightbox
             isOpen={isOpen}
             images={items
-              .find(item => item.id === selectedProject)
-              .images.map(item => ({ src: item.preview.src }))}
+              .find((item) => item.id === selectedProject)
+              .images.map((item) => ({ src: item.preview.src }))}
             currentImage={currentImage}
             onClose={this.onClose}
             onClickNext={() => this.onChangeCurrentImage(currentImage + 1)}
@@ -88,9 +91,9 @@ FeaturedProjects.propTypes = {
           thumbnail: PropTypes.shape({
             src: PropTypes.string.isRequired,
           }).isRequired,
-        })
+        }),
       ).isRequired,
-    })
+    }),
   ).isRequired,
 };
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import Lightbox from 'react-images';
-import styled from 'styled-components';
 import LazyLoad from 'react-lazyload';
+import styled from 'styled-components';
 
 import data from '../data';
 
@@ -18,9 +18,9 @@ class Certificates extends React.Component {
 
   onClose = () => this.setState({ open: false, currentImage: 0 });
 
-  onOpen = index => this.setState({ open: true, currentImage: index });
+  onOpen = (index) => this.setState({ open: true, currentImage: index });
 
-  onChangeCurrentImage = index => {
+  onChangeCurrentImage = (index) => {
     if (index < data.certificates.length && index > -1) {
       this.setState({ currentImage: index });
     }
@@ -45,7 +45,9 @@ class Certificates extends React.Component {
         </div>
         <Lightbox
           isOpen={open}
-          images={data.certificates.map(item => ({ src: `${baseUri + item}` }))}
+          images={data.certificates.map((item) => ({
+            src: `${baseUri + item}`,
+          }))}
           currentImage={currentImage}
           onClose={this.onClose}
           onClickNext={() => this.onChangeCurrentImage(currentImage + 1)}
