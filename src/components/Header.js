@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link, { withPrefix } from 'gatsby-link';
+import { Link, withPrefix } from 'gatsby';
 import { FormattedMessage } from 'react-intl';
 import styled from 'styled-components';
 
@@ -15,9 +15,10 @@ const Wrapper = styled.div`
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+    display: flex;
 
     > div {
-      height: 100%;
+      flex: 1;
       background: linear-gradient(
         to top,
         rgba(255, 255, 255, 1) 0%,

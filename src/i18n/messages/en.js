@@ -16,6 +16,7 @@ export default {
   },
   projects: {
     title: 'PROJECTS',
+    initiationAction: 'ALL PROJECTS',
   },
   contact: {
     title: 'CONTACTS',
