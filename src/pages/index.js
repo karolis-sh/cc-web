@@ -22,7 +22,7 @@ function IndexPage({ data: pageData }) {
           title: item.node.frontmatter[`title_${locale}`],
         }));
         const projects = mapProjects(pageData.projects, locale);
-        console.log('projects :>> ', projects);
+
         return (
           <div className="mh2">
             <div className="dn-ns">
