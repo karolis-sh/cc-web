@@ -2,9 +2,17 @@
 !*.js
 !*.json
 !*.css
+!*.yml
+!*.sh
+!*.gitignore
+!*.env
+!*.env.*
 
-**/node_modules
+# npm files
+node_modules
 package.json
 
 # Build
 /public
+/.cache
+.husky/_/

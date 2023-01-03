@@ -1,4 +1,5 @@
 import dot from 'dot-object';
+
 import en from './en';
 import sv from './sv';
 

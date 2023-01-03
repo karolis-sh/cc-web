@@ -1,9 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
+import PropTypes from 'prop-types';
+import React from 'react';
 import { FormattedMessage } from 'react-intl';
 
-import { CurrentLocale } from '../i18n/components';
 import {
   Services,
   FeaturedProjects,
@@ -11,14 +10,15 @@ import {
   ForwardButton,
   Certificates,
 } from '../components';
-import { mapProjects } from '../utils';
 import staticData from '../data';
+import { CurrentLocale } from '../i18n/components';
+import { mapProjects } from '../utils';
 
 function IndexPage({ data: pageData }) {
   return (
     <CurrentLocale
       render={({ locale }) => {
-        const services = pageData.services.edges.map(item => ({
+        const services = pageData.services.edges.map((item) => ({
           title: item.node.frontmatter[`title_${locale}`],
         }));
         const projects = mapProjects(pageData.projects, locale);
@@ -78,7 +78,12 @@ function IndexPage({ data: pageData }) {
 }
 
 IndexPage.propTypes = {
-  data: PropTypes.shape({}).isRequired,
+  data: PropTypes.shape({
+    services: PropTypes.shape({
+      edges: PropTypes.array.isRequired,
+    }).isRequired,
+    projects: PropTypes.shape({}).isRequired,
+  }).isRequired,
 };
 
 export default IndexPage;
@@ -100,7 +105,10 @@ export const query = graphql`
       }
     }
     projects: allNetlifyContent(
-      filter: { contentType: { eq: "projects" }, frontmatter: { featured: { eq: true } } }
+      filter: {
+        contentType: { eq: "projects" }
+        frontmatter: { featured: { eq: true } }
+      }
       sort: { frontmatter: { order: DESC } }
     ) {
       edges {

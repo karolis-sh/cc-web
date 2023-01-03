@@ -43,4 +43,5 @@ const data = {
   },
 };
 
+// eslint-disable-next-line no-undef
 export default data[process.env.GATSBY_DATA_TARGET];

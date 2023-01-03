@@ -1,7 +1,7 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import LazyLoad from 'react-lazyload';
+import React from 'react';
 import Lightbox from 'react-images';
+import LazyLoad from 'react-lazyload';
 import styled from 'styled-components';
 
 import ProjectImage from './ProjectImage';
@@ -25,9 +25,9 @@ class Project extends React.Component {
 
   onClose = () => this.setState({ open: false, currentImage: 0 });
 
-  onOpen = index => this.setState({ open: true, currentImage: index });
+  onOpen = (index) => this.setState({ open: true, currentImage: index });
 
-  onChangeCurrentImage = index => {
+  onChangeCurrentImage = (index) => {
     const { images } = this.props;
     if (index < images.length && index > -1) {
       this.setState({ currentImage: index });
@@ -53,7 +53,7 @@ class Project extends React.Component {
         </ProjectImages>
         <Lightbox
           isOpen={open}
-          images={images.map(item => ({ src: item.preview.src }))}
+          images={images.map((item) => ({ src: item.preview.src }))}
           currentImage={currentImage}
           onClose={this.onClose}
           onClickNext={() => this.onChangeCurrentImage(currentImage + 1)}
@@ -72,7 +72,7 @@ Project.propTypes = {
 function Projects({ items }) {
   return (
     <div>
-      {items.map(item => (
+      {items.map((item) => (
         <Project key={item.id} {...item} />
       ))}
     </div>
@@ -83,7 +83,7 @@ Projects.propTypes = {
   items: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
-    })
+    }),
   ).isRequired,
 };
 

@@ -1,10 +1,13 @@
 import { css } from 'styled-components';
 
-const makeQuery = screen => (...args) => css`
-  @media screen and ${screen} {
-    ${css(...args)};
-  }
-`;
+const makeQuery =
+  (screen) =>
+  (...args) =>
+    css`
+      @media screen and ${screen} {
+        ${css(...args)};
+      }
+    `;
 
 const media = {
   notSmall: makeQuery('(min-width: 30em)'),

@@ -1,12 +1,12 @@
-import React from 'react';
+import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
+import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import styled from 'styled-components';
-import { graphql } from 'gatsby';
 
+import { ContentTitle } from '../components';
 import contentData from '../data';
 import { media } from '../style';
-import { ContentTitle } from '../components';
 
 const Contacts = styled.div`
   ${media.notSmall`
@@ -25,10 +25,16 @@ const Link = styled.a`
 `;
 
 function ContactsPage({ data }) {
-  const contacts = data.contacts.edges.map(({ node: { frontmatter: { title, phone } } }) => ({
-    title,
-    phone,
-  }));
+  const contacts = data.contacts.edges.map(
+    ({
+      node: {
+        frontmatter: { title, phone },
+      },
+    }) => ({
+      title,
+      phone,
+    }),
+  );
 
   return (
     <div className="mh2">
@@ -39,14 +45,19 @@ function ContactsPage({ data }) {
       <Contacts>
         <FormattedMessage id="contact.text" />
         <ul>
-          {contacts.map(item => (
+          {contacts.map((item) => (
             <li key={item.title}>
-              <Link href={`tel:${item.phone.replace(' ', '')}`}>{item.phone}</Link> - {item.title}
+              <Link href={`tel:${item.phone.replace(' ', '')}`}>
+                {item.phone}
+              </Link>{' '}
+              - {item.title}
             </li>
           ))}
           {contentData.email && (
             <li>
-              <Link href={`mailto:${contentData.email}`}>{contentData.email}</Link>
+              <Link href={`mailto:${contentData.email}`}>
+                {contentData.email}
+              </Link>
             </li>
           )}
         </ul>

@@ -20,7 +20,8 @@ export default {
   },
   contact: {
     title: 'CONTACTS',
-    initiationText: 'Do you have any questions, or are interested in doing business with us?',
+    initiationText:
+      'Do you have any questions, or are interested in doing business with us?',
     initiationAction: 'CONTACT US',
     text: 'Feel free to contact us if you have any questions or business proposals.',
   },

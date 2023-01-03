@@ -1,5 +1,5 @@
-import { useContext } from 'react';
 import PropTypes from 'prop-types';
+import { useContext } from 'react';
 
 import LocaleContext from './LocaleContext';
 

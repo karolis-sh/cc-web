@@ -2,13 +2,16 @@ exports.onCreateNode = ({ node, actions }) => {
   if (node.internal.type === 'MarkdownRemark') {
     const { createNode } = actions;
 
-    const contentKey = node.fileAbsolutePath.replace(`${__dirname}/src/content/`, '');
+    const contentKey = node.fileAbsolutePath.replace(
+      `${__dirname}/src/content/`,
+      '',
+    );
     const contentType = contentKey.split('/')[0];
     const frontmatter = { ...node.frontmatter };
 
     frontmatter.order = Number(frontmatter.order);
     if (frontmatter.images) {
-      frontmatter.images = frontmatter.images.map(item => ({
+      frontmatter.images = frontmatter.images.map((item) => ({
         ...item,
         image: `../../../static${item.image}`,
       }));
