@@ -6,12 +6,12 @@ if (['esc', 'statrem'].indexOf(target) === -1) {
 const config = {
   esc: {
     siteUrl: 'https://esconstruction.eu',
-    gaTrackingId: 'UA-82184813-1',
+    gaTrackingId: 'G-653R2SZLY6',
     s3bucketName: 'esconstruction.eu',
   },
   statrem: {
     siteUrl: 'https://statrem.eu',
-    gaTrackingId: 'UA-121319197-1',
+    gaTrackingId: 'G-PY4SBPJPDW',
     s3bucketName: 'statrem.eu',
   },
 }[process.env.GATSBY_DATA_TARGET];
@@ -25,10 +25,9 @@ module.exports = {
     'gatsby-plugin-styled-components',
     'gatsby-plugin-sass',
     {
-      resolve: 'gatsby-plugin-google-analytics',
+      resolve: 'gatsby-plugin-google-gtag',
       options: {
-        trackingId: config.gaTrackingId,
-        anonymize: true,
+        trackingIds: [config.gaTrackingId],
       },
     },
     {

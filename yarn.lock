@@ -6860,14 +6860,13 @@ gatsby-plugin-advanced-sitemap@^2.1.0:
     pify "5.0.0"
     xml "^1.0.1"
 
-gatsby-plugin-google-analytics@^5.3.0:
+gatsby-plugin-google-gtag@^5.3.0:
   version "5.3.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-5.3.0.tgz#1eedfe6a31f0eb28db86aeeb28bb26c2c8908dc7"
-  integrity sha512-0dKwaalGzMcmHoTVNrUH8cYfJewCMK5LDk3Mqw2rjsW+93aeIdwYwZBaXfSZXPNMHFANOnUL1zV6M2dbGzu9Xw==
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-gtag/-/gatsby-plugin-google-gtag-5.3.0.tgz#b8cd845938e2b4fa78e262cbe843de1085789e02"
+  integrity sha512-anLuBM/tVhRZzrNqhOM0FnKiiAZzJYukl5XjaedWrgfNf5agRw1ZmYmiKsT4SIoo6MQmm8w0VZMuksQIEGS07w==
   dependencies:
     "@babel/runtime" "^7.15.4"
     minimatch "^3.1.2"
-    web-vitals "^1.1.2"
 
 gatsby-plugin-layout@^4.3.0:
   version "4.3.0"
@@ -14749,11 +14748,6 @@ weak-lru-cache@^1.2.2:
 web-namespaces@^1.0.0:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/web-namespaces/-/web-namespaces-1.1.2.tgz#c8dc267ab639505276bae19e129dbd6ae72b22b4"
-
-web-vitals@^1.1.2:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/web-vitals/-/web-vitals-1.1.2.tgz#06535308168986096239aa84716e68b4c6ae6d1c"
-  integrity sha512-PFMKIY+bRSXlMxVAQ+m2aw9c/ioUYfDgrYot0YUa+/xa0sakubWhSDyxAKwzymvXVdF4CZI71g06W+mqhzu6ig==
 
 webfontloader@^1.6.28:
   version "1.6.28"
