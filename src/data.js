@@ -3,7 +3,7 @@ import React from 'react';
 const data = {
   esc: {
     $key: 'esc',
-    url: 'http://esconstruction.eu',
+    url: 'https://esconstruction.eu',
     urlName: 'esconstruction.eu',
     startYear: 2017,
     companyName: 'Eco Scandinavian Construction AB',
@@ -33,7 +33,7 @@ const data = {
   },
   statrem: {
     $key: 'statrem',
-    url: 'http://statrem.eu',
+    url: 'https://statrem.eu',
     urlName: 'statrem.eu',
     startYear: 2016,
     companyName: 'Statrem',
